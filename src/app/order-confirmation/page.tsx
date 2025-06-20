@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
-export default function OrderConfirmationPage({ searchParams }: { searchParams: { orderId?: string } }) {
-  const orderId = searchParams.orderId || 'N/A';
+export default function OrderConfirmationPage({ searchParams: { orderId: orderIdFromSearch } }: { searchParams: { orderId?: string } }) {
+  const orderId = orderIdFromSearch || 'N/A';
 
   return (
     <div className="flex flex-col min-h-screen">

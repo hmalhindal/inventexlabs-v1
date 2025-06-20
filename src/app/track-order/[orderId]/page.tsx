@@ -18,9 +18,9 @@ const mockOrderStatuses = [
 ];
 
 
-export default function TrackOrderPage({ params }: { params: { orderId: string } }) {
+export default function TrackOrderPage({ params: { orderId: orderIdFromParams } }: { params: { orderId: string } }) {
   // In a real app, you'd fetch order data based on params.orderId
-  const orderId = params.orderId;
+  const orderId = orderIdFromParams;
   const orderExists = orderId !== 'unknown-order'; // Mock check
 
   if (!orderExists) {
