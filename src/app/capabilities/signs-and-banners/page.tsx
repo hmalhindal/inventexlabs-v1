@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Square, Flag } from 'lucide-react'; // Using Flag as a relevant icon
+import { Flag } from 'lucide-react'; 
 
 export const metadata: Metadata = {
   title: 'Signs & Banners Services - Inventex Labs',
@@ -53,14 +53,14 @@ export default function SignsAndBannersPage() {
             </div>
             <h2 className="font-headline text-2xl text-primary pt-4">Our Sign & Banner Offerings Include:</h2>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>Vinyl Banners (Indoor & Outdoor)</li>
-              <li>Retractable Banner Stands</li>
-              <li>Foam Board Signs</li>
-              <li>Acrylic Signs</li>
-              <li>Metal Signs (e.g., Aluminum)</li>
-              <li>Window Decals and Graphics</li>
-              <li>Yard Signs</li>
-              <li>Trade Show Displays</li>
+              <li><span className="font-semibold text-foreground">Vinyl Banners (Indoor & Outdoor)</span></li>
+              <li><span className="font-semibold text-foreground">Retractable Banner Stands</span></li>
+              <li><span className="font-semibold text-foreground">Foam Board Signs</span></li>
+              <li><span className="font-semibold text-foreground">Acrylic Signs</span></li>
+              <li><span className="font-semibold text-foreground">Metal Signs (e.g., Aluminum)</span></li>
+              <li><span className="font-semibold text-foreground">Window Decals and Graphics</span></li>
+              <li><span className="font-semibold text-foreground">Yard Signs</span></li>
+              <li><span className="font-semibold text-foreground">Trade Show Displays</span></li>
             </ul>
             <p className="pt-4">
               Let us help you create impactful visual communications. Contact us to discuss your project or upload your design for a custom quote.
