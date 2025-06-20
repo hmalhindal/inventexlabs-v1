@@ -31,23 +31,17 @@ const footerLinkGroups = [
   {
     title: 'Resources',
     links: [
-      { href: '/resources/manufacturing-resources', text: 'Manufacturing Resources' },
       { href: '/resources/cnc-design-guide', text: 'CNC Design Guide' },
       { href: '/resources/laser-cutting-design-guide', text: 'Laser Cutting Design Guide' },
-      { href: '/resources/sheet-metal-design-guide', text: 'Sheet Metal Design Guide' },
-      { href: '/downloads-faq', text: 'Downloads & FAQ' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { href: '/blog', text: 'Blog' },
       { href: '/careers', text: 'Careers' },
       { href: '/our-partners', text: 'Our Partners' },
       { href: '/privacy-policy', text: 'Privacy Policy' },
       { href: '/terms-conditions', text: 'Terms & Conditions' },
-      { href: '/promotion-terms-conditions', text: 'Promotion Terms & Conditions' },
-      { href: '/referral-terms-conditions', text: 'Referral Terms & Conditions' },
     ],
   },
   {
