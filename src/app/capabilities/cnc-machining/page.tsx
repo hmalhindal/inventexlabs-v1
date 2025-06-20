@@ -27,11 +27,11 @@ export default function CncMachiningPage() {
           <CardContent className="space-y-6 text-lg">
             <Image 
               src="https://placehold.co/800x400.png" 
-              alt="CNC Machine in operation" 
+              alt="CNC Router machine" 
               width={800} 
               height={400} 
               className="rounded-lg mb-6"
-              data-ai-hint="CNC machine"
+              data-ai-hint="CNC router"
             />
             <p>
               Inventex Labs offers state-of-the-art CNC (Computer Numerical Control) machining services, delivering high-precision parts for a wide range of applications. Our advanced machinery and skilled technicians can produce complex geometries with tight tolerances, ensuring your components meet exact specifications.
