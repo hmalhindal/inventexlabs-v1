@@ -25,11 +25,9 @@ import {
   ShoppingCart, // Online Store
   ChevronDown, // Dropdown indicator
   Zap, // Laser Cutting
-  Cog, // CNC Machining (alternative to Settings for specific service)
+  Cog, // CNC Machining
   LayoutPanelLeft, // Sheet Metal
-  // Box, // 3D Printing - Removed
-  Palette, // Material general
-  Wrench // Generic capability / service
+  Printer // Digital Printing
 } from 'lucide-react';
 
 const navLinks = [
@@ -43,7 +41,7 @@ const navLinks = [
       { href: '/capabilities/cnc-machining', label: 'CNC Machining', icon: Cog },
       { href: '/capabilities/laser-cutting', label: 'Laser Cutting', icon: Zap },
       { href: '/capabilities/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
-      // { href: '/capabilities/3d-printing', label: '3D Printing', icon: Box }, // Removed
+      { href: '/capabilities/digital-printing', label: 'Digital Printing', icon: Printer }, // Added
     ]
   },
   { 
@@ -54,7 +52,10 @@ const navLinks = [
       { href: '/materials/cnc-machining', label: 'CNC Materials', icon: Cog },
       { href: '/materials/laser-cutting', label: 'Laser Materials', icon: Zap },
       { href: '/materials/sheet-metal', label: 'Sheet Metal Materials', icon: LayoutPanelLeft },
-      // { href: '/materials/3d-printing', label: '3D Printing Materials', icon: Box }, // Removed
+      { href: '/materials/acrylic', label: 'Acrylic', icon: Layers },
+      { href: '/materials/wood', label: 'Wood', icon: Layers },
+      { href: '/materials/aluminum', label: 'Aluminum', icon: Layers },
+      { href: '/materials/styrofoam', label: 'Styrofoam', icon: Layers },
     ]
   },
   { href: '/capabilities/signs-and-banners', label: 'Signs & Banners', icon: Flag },
