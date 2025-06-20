@@ -20,10 +20,10 @@ export default function HomePage() {
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
         <div className="text-center mb-10 md:mb-16">
           <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-3">
-            Instant Manufacturing Quotes
+            Inventex Labs - Instant Quotes
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Upload your CAD design, select materials, and get a real-time quotation for laser cutting or CNC machining.
+            Upload your CAD design, select materials, and get a real-time quotation for laser cutting or CNC machining with Inventex Labs.
           </p>
         </div>
 

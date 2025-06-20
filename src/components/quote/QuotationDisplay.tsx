@@ -72,7 +72,7 @@ export function QuotationDisplay({ quotation, isLoading, onPlaceOrder }: Quotati
     <Card className="w-full shadow-lg">
       <CardHeader>
         <CardTitle className="font-headline text-2xl text-primary flex items-center gap-2">
-           <ThumbsUp className="h-7 w-7" /> Your FabQuote Estimate
+           <ThumbsUp className="h-7 w-7" /> Your Inventex Labs Estimate
         </CardTitle>
         <CardDescription>Here's the breakdown of your manufacturing cost.</CardDescription>
       </CardHeader>

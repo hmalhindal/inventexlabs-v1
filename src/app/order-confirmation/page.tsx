@@ -17,7 +17,7 @@ export default function OrderConfirmationPage({ searchParams }: { searchParams: 
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
             <CardTitle className="font-headline text-3xl text-primary">Order Confirmed!</CardTitle>
             <CardDescription className="text-lg">
-              Thank you for your purchase. Your order <span className="font-semibold text-primary">{orderId}</span> is being processed.
+              Thank you for your purchase with Inventex Labs. Your order <span className="font-semibold text-primary">{orderId}</span> is being processed.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">

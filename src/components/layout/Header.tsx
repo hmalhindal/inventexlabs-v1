@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { Sheet } from 'lucide-react';
+import { InventexLogo } from '@/components/icons/InventexLogo';
 
 export function Header() {
   return (
     <header className="bg-card border-b border-border shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <Sheet className="h-8 w-8 text-primary group-hover:animate-pulse" />
-          <h1 className="font-headline text-2xl font-bold text-primary">
-            FabQuote
+          <InventexLogo className="h-10 w-auto text-primary group-hover:opacity-80 transition-opacity" />
+          <h1 className="font-headline text-2xl font-bold text-primary hidden sm:block">
+            Inventex Labs
           </h1>
         </Link>
         <nav className="flex items-center gap-4">

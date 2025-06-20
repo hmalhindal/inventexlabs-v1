@@ -58,11 +58,11 @@ export function OrderPlacementModal({ isOpen, setIsOpen, quotation }: OrderPlace
     setIsProcessing(false);
     setIsOpen(false);
     
-    const orderId = `FQ-${Date.now().toString().slice(-6)}`; // Mock order ID
+    const orderId = `IXL-${Date.now().toString().slice(-6)}`; // Updated Mock order ID for Inventex Labs
     router.push(`/order-confirmation?orderId=${orderId}`);
     toast({
       title: 'Order Confirmed!',
-      description: `Your order ${orderId} has been placed successfully.`,
+      description: `Your order ${orderId} has been placed successfully with Inventex Labs.`,
     });
   };
 

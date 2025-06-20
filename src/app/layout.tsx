@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'FabQuote - Instant Manufacturing Quotations',
-  description: 'Upload your CAD design and get an instant quotation for laser cutting and CNC machining services.',
+  title: 'Inventex Labs - Instant Manufacturing Quotations',
+  description: 'Upload your CAD design and get an instant quotation for laser cutting and CNC machining services with Inventex Labs.',
 };
 
 export default function RootLayout({
