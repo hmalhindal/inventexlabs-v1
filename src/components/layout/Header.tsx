@@ -27,7 +27,7 @@ import {
   Zap, // Laser Cutting
   Cog, // CNC Machining (alternative to Settings for specific service)
   LayoutPanelLeft, // Sheet Metal
-  Box, // 3D Printing
+  // Box, // 3D Printing - Removed
   Palette, // Material general
   Wrench // Generic capability / service
 } from 'lucide-react';
@@ -43,8 +43,7 @@ const navLinks = [
       { href: '/capabilities/cnc-machining', label: 'CNC Machining', icon: Cog },
       { href: '/capabilities/laser-cutting', label: 'Laser Cutting', icon: Zap },
       { href: '/capabilities/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
-      { href: '/capabilities/3d-printing', label: '3D Printing', icon: Box },
-      // Signs & Banners is a top-level link now
+      // { href: '/capabilities/3d-printing', label: '3D Printing', icon: Box }, // Removed
     ]
   },
   { 
@@ -55,7 +54,7 @@ const navLinks = [
       { href: '/materials/cnc-machining', label: 'CNC Materials', icon: Cog },
       { href: '/materials/laser-cutting', label: 'Laser Materials', icon: Zap },
       { href: '/materials/sheet-metal', label: 'Sheet Metal Materials', icon: LayoutPanelLeft },
-      { href: '/materials/3d-printing', label: '3D Printing Materials', icon: Box },
+      // { href: '/materials/3d-printing', label: '3D Printing Materials', icon: Box }, // Removed
     ]
   },
   { href: '/capabilities/signs-and-banners', label: 'Signs & Banners', icon: Flag },

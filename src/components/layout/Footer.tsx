@@ -17,7 +17,6 @@ const footerLinkGroups = [
       { href: '/capabilities/cnc-machining', text: 'CNC Machining' },
       { href: '/capabilities/laser-cutting', text: 'Laser Cutting' },
       { href: '/capabilities/sheet-metal', text: 'Sheet Metal' },
-      { href: '/capabilities/3d-printing', text: '3D Printing' },
       { href: '/capabilities/signs-and-banners', text: 'Signs & Banners' },
     ],
   },
@@ -27,7 +26,6 @@ const footerLinkGroups = [
       { href: '/materials/cnc-machining', text: 'CNC Machining Materials' },
       { href: '/materials/laser-cutting', text: 'Laser Cutting Materials' },
       { href: '/materials/sheet-metal', text: 'Sheet Metal Materials' },
-      { href: '/materials/3d-printing', text: '3D Printing Materials' },
     ],
   },
   {
@@ -37,7 +35,6 @@ const footerLinkGroups = [
       { href: '/resources/cnc-design-guide', text: 'CNC Design Guide' },
       { href: '/resources/laser-cutting-design-guide', text: 'Laser Cutting Design Guide' },
       { href: '/resources/sheet-metal-design-guide', text: 'Sheet Metal Design Guide' },
-      { href: '/resources/3d-printing-design-guide', text: '3D Printing Design Guide' },
       { href: '/downloads-faq', text: 'Downloads & FAQ' },
     ],
   },

@@ -15,7 +15,7 @@ const resourceItems = [
   { title: "CNC Design Guide", href: "/resources/cnc-design-guide", description: "Best practices for designing parts for CNC machining.", icon: Wrench },
   { title: "Laser Cutting Design Guide", href: "/resources/laser-cutting-design-guide", description: "Tips for optimizing designs for laser cutting.", icon: Zap },
   { title: "Sheet Metal Design Guide", href: "/resources/sheet-metal-design-guide", description: "Considerations for effective sheet metal part design.", icon: Wrench },
-  { title: "3D Printing Design Guide", href: "/resources/3d-printing-design-guide", description: "Guidelines for designing for various 3D printing technologies.", icon: Wrench },
+  // { title: "3D Printing Design Guide", href: "/resources/3d-printing-design-guide", description: "Guidelines for designing for various 3D printing technologies.", icon: Wrench }, // Removed
   { title: "Material Selection Guides", href: "/materials", description: "Information on various materials for manufacturing processes.", icon: BookOpen },
   { title: "Industry Insights & Blog", href: "/blog", description: "Articles on manufacturing trends, tips, and innovations.", icon: Lightbulb },
 ];
@@ -60,4 +60,3 @@ export default function ManufacturingResourcesPage() {
     </div>
   );
 }
-

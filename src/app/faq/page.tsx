@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     question: "What manufacturing services does Inventex Labs offer?",
-    answer: "Inventex Labs currently offers CNC Machining and Laser Cutting services. We are continuously expanding our capabilities, so please check back for updates on services like Injection Moulding, Sheet Metal Fabrication, and 3D Printing.",
+    answer: "Inventex Labs currently offers CNC Machining and Laser Cutting services. We are continuously expanding our capabilities, so please check back for updates on services like Injection Moulding and Sheet Metal Fabrication.",
   },
   {
     question: "How do I get a quote for my design?",
@@ -22,7 +22,7 @@ const faqItems = [
   },
   {
     question: "What file formats do you accept for CAD designs?",
-    answer: "We accept a variety of common CAD file formats, including .STEP, .STP, .IGES, .IGS, .DXF, and .DWG. For 3D printing, .STL is also commonly accepted. If you have a different format, please contact us.",
+    answer: "We accept a variety of common CAD file formats, including .STEP, .STP, .IGES, .IGS, .DXF, and .DWG. If you have a different format, please contact us.",
   },
   {
     question: "What materials can I choose from?",
