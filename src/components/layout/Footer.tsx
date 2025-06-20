@@ -23,9 +23,9 @@ const footerLinkGroups = [
   {
     title: 'Materials',
     links: [
-      { href: '/materials/cnc-machining', text: 'CNC Machining Materials' },
-      { href: '/materials/laser-cutting', text: 'Laser Cutting Materials' },
-      { href: '/materials/sheet-metal', text: 'Sheet Metal Materials' },
+      { href: '/materials/cnc-machining', text: 'CNC Machining' },
+      { href: '/materials/laser-cutting', text: 'Laser Cutting' },
+      { href: '/materials/sheet-metal', text: 'Sheet Metal' },
     ],
   },
   {
