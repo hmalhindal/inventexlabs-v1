@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Users, MessageSquare, Search } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Our Platform - Inventex Labs',
@@ -12,6 +12,45 @@ export const metadata: Metadata = {
 };
 
 export default function OurPlatformPage() {
+  const platformFeatures = [
+    { 
+      title: "Instant AI-Powered Quotes & Estimates", 
+      description: "Upload your design and get comprehensive quotes in seconds, powered by our advanced AI algorithms that analyze geometry and material specifications." 
+    },
+    { 
+      title: "User-Friendly Interface", 
+      description: "Navigate our intuitive platform with ease, designed for both beginners and experienced engineers to quickly configure and order parts." 
+    },
+    { 
+      title: "Automated DFM Feedback", 
+      description: "Receive instant Design for Manufacturability (DFM) feedback to help optimize your designs for production, reducing costs and potential issues." 
+    },
+    { 
+      title: "Broad Material & Process Selection", 
+      description: "Access a wide array of manufacturing processes like CNC machining and laser cutting, with a diverse selection of metals and plastics." 
+    },
+    { 
+      title: "Transparent Pricing", 
+      description: "Understand the cost breakdown with no hidden fees. See clear pricing for materials, machine time, and labor." 
+    },
+    { 
+      title: "Secure & Confidential Platform", 
+      description: "We prioritize the security of your intellectual property with robust data protection measures and confidential handling of all design files." 
+    },
+    { 
+      title: "Order Tracking & Management", 
+      description: "Stay informed with real-time updates on your order status, from design submission and production to shipment and delivery." 
+    },
+    { 
+      title: "Collaboration Tools (Coming Soon)", 
+      description: "Share designs, quotes, and feedback with your team members directly within the platform for seamless project collaboration." 
+    },
+    { 
+      title: "Expert Support & Consultation", 
+      description: "Our team of manufacturing experts is available to provide assistance, answer questions, and offer consultation for complex projects." 
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -37,16 +76,9 @@ export default function OurPlatformPage() {
             </p>
             
             <div>
-              <h2 className="font-headline text-2xl text-primary mb-4">Key Features & Benefits</h2>
-              <ul className="space-y-3">
-                {[
-                  { title: "Instant AI-Powered Quotes", description: "Upload your design and get a comprehensive quote in seconds, powered by our advanced AI algorithms." },
-                  { title: "Wide Range of Capabilities", description: "Access CNC machining, laser cutting, and more, with a diverse selection of materials." },
-                  { title: "Design for Manufacturability (DFM) Feedback", description: "Our platform provides automated feedback to help optimize your designs for production." },
-                  { title: "Transparent Pricing", description: "No hidden fees. Understand the cost breakdown for materials, labor, and machine time." },
-                  { title: "Order Tracking", description: "Stay informed with real-time updates on your order status from production to shipment." },
-                  { title: "Secure & Confidential", description: "We prioritize the security of your intellectual property with robust data protection measures." }
-                ].map(item => (
+              <h2 className="font-headline text-2xl text-primary mb-4">Key Platform Features</h2>
+              <ul className="space-y-4">
+                {platformFeatures.map(item => (
                   <li key={item.title} className="flex items-start">
                     <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 shrink-0" />
                     <div>
