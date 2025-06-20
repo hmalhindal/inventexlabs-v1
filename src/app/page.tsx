@@ -33,7 +33,7 @@ const servicesData: Service[] = [
   { name: 'Website Design', icon: MonitorSmartphone },
   { name: 'International Flags', icon: Flag },
   { name: 'Laser Cutting', icon: Zap },
-  { name: 'Signs & Banners', icon: Flag }, // Added new service
+  { name: 'Signs & Banners', icon: Flag }, 
 ];
 
 export default function HomePage() {
@@ -45,24 +45,26 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
-        <section className="mb-10 md:mb-16">
-          <h2 className="font-headline text-3xl sm:text-4xl font-bold text-center text-primary mb-8">
+        <section className="mb-10 md:mb-16 bg-primary text-primary-foreground py-10 md:py-16 rounded-lg">
+          <h2 className="font-headline text-3xl sm:text-4xl font-bold text-center text-primary-foreground mb-8">
             Explore Our Services
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6">
-            {servicesData.map((service) => (
-              <Card key={service.name} className="shadow-md hover:shadow-lg transition-shadow text-center">
-                <CardHeader className="pb-2">
-                  <service.icon className="h-10 w-10 text-primary mx-auto mb-2" />
-                  <CardTitle className="font-headline text-md sm:text-lg text-foreground">
-                    {service.name}
-                  </CardTitle>
-                </CardHeader>
-                {/* <CardContent>
-                  <p className="text-xs text-muted-foreground">Description placeholder</p>
-                </CardContent> */}
-              </Card>
-            ))}
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6">
+              {servicesData.map((service) => (
+                <Card 
+                  key={service.name} 
+                  className="shadow-md hover:shadow-lg transition-shadow text-center bg-primary text-primary-foreground"
+                >
+                  <CardHeader className="pb-2">
+                    <service.icon className="h-10 w-10 text-primary-foreground mx-auto mb-2" />
+                    <CardTitle className="font-headline text-md sm:text-lg text-primary-foreground">
+                      {service.name}
+                    </CardTitle>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
           </div>
         </section>
 
