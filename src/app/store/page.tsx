@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ShoppingCart, Clock, Layers, Trees, RectangleHorizontal, Truck, Flag, ScissorsLine, type LucideProps } from 'lucide-react';
+import { ShoppingCart, Clock, Layers, Trees, RectangleHorizontal, Truck, Flag, Scissors, type LucideProps } from 'lucide-react';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ const productCategories: ProductCategory[] = [
   { name: 'Backdrops & Displays', slug: 'backdrops', icon: RectangleHorizontal, description: 'Custom backdrops for events and photography.', image_hint: 'event backdrop' },
   { name: 'Trolley Carts', slug: 'trolley-carts', icon: Truck, description: 'Customizable utility and display carts.', image_hint: 'utility cart' },
   { name: 'Signs & Banners', slug: 'signs-banners', icon: Flag, description: 'Promotional and informational signage.', image_hint: 'banner sign' },
-  { name: 'Stickers (Print & Cut)', slug: 'stickers', icon: ScissorsLine, description: 'Custom die-cut stickers and labels.', image_hint: 'sticker sheet' },
+  { name: 'Stickers (Print & Cut)', slug: 'stickers', icon: Scissors, description: 'Custom die-cut stickers and labels.', image_hint: 'sticker sheet' },
 ];
 
 export default function StorePage() {
