@@ -39,6 +39,16 @@ export default function SheetMetalPage() {
             <p>
               We work with various metals such as steel, stainless steel, and aluminum, catering to projects from prototypes to production runs. Our platform makes it easy to get quotes for your sheet metal designs.
             </p>
+            <div className="my-6 flex justify-center">
+              <Image 
+                src="https://placehold.co/300x200.png"
+                alt="Inventex Labs Sheet Metal Fabrication Showcase"
+                width={300} 
+                height={200} 
+                className="rounded-md shadow-md"
+                data-ai-hint="bent metal"
+              />
+            </div>
             <h2 className="font-headline text-2xl text-primary pt-4">Our Sheet Metal Services Include:</h2>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               <li>Precision laser cutting and CNC punching</li>

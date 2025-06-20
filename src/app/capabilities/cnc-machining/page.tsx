@@ -39,6 +39,16 @@ export default function CncMachiningPage() {
             <p>
               Whether you need prototypes, custom parts, or low-to-medium volume production runs, our CNC machining capabilities are designed to support your project needs. We work with a variety of materials, including metals like aluminum and steel, as well as various plastics.
             </p>
+            <div className="my-6 flex justify-center">
+              <Image 
+                src="https://placehold.co/300x200.png"
+                alt="Inventex Labs CNC Machining Service Showcase"
+                width={300} 
+                height={200} 
+                className="rounded-md shadow-md"
+                data-ai-hint="metal part"
+              />
+            </div>
             <h2 className="font-headline text-2xl text-primary pt-4">Our CNC Machining Capabilities:</h2>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               <li>3-axis, 4-axis, and 5-axis CNC milling</li>

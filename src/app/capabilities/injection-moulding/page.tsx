@@ -39,6 +39,16 @@ export default function InjectionMouldingPage() {
             <p>
               From initial design consultation and mould creation to full-scale production and quality assurance, we offer an end-to-end solution for your injection moulding needs. Our platform allows for quick quoting and project management.
             </p>
+            <div className="my-6 flex justify-center">
+              <Image 
+                src="https://placehold.co/300x200.png"
+                alt="Inventex Labs Injection Moulding Service Showcase"
+                width={300} 
+                height={200} 
+                className="rounded-md shadow-md"
+                data-ai-hint="plastic part"
+              />
+            </div>
             <h2 className="font-headline text-2xl text-primary pt-4">Why Choose Injection Moulding with Us:</h2>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               <li>Rapid tooling and production mould options</li>

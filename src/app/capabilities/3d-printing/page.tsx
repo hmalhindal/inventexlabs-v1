@@ -39,6 +39,16 @@ export default function ThreeDPrintingPage() {
             <p>
              Our platform supports instant quoting for 3D printed parts, allowing you to quickly assess costs and lead times for technologies like FDM, SLA, SLS, and more, across a range of polymers and resins.
             </p>
+            <div className="my-6 flex justify-center">
+              <Image 
+                src="https://placehold.co/300x200.png"
+                alt="Inventex Labs 3D Printing Service Showcase"
+                width={300} 
+                height={200} 
+                className="rounded-md shadow-md"
+                data-ai-hint="3D object"
+              />
+            </div>
             <h2 className="font-headline text-2xl text-primary pt-4">Advantages of 3D Printing with Us:</h2>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               <li>Wide selection of 3D printing technologies (FDM, SLA, SLS, MJF)</li>
