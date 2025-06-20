@@ -78,18 +78,18 @@ export default function ContactUsPage() {
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-6 w-6 text-primary" />
-                  <a href="mailto:info@inventexlabs.com" className="text-lg hover:underline">info@inventexlabs.com</a>
+                  <a href="mailto:admin@inventexlabs.com" className="text-lg hover:underline">admin@inventexlabs.com</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-6 w-6 text-primary" />
-                  <a href="tel:+15551234567" className="text-lg hover:underline">+1 (555) 123-4567</a>
+                  <a href="tel:+96565886831" className="text-lg hover:underline">+965 65886831</a>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin className="h-6 w-6 text-primary mt-1 shrink-0" />
                   <p className="text-lg">
-                    Inventex Labs HQ<br />
-                    123 Innovation Drive<br />
-                    Tech City, CA 94000, USA
+                    Inventex Labs<br />
+                    St 3, Fahaheel industrial Area<br />
+                    Kuwait
                   </p>
                 </div>
               </CardContent>
@@ -99,7 +99,7 @@ export default function ContactUsPage() {
                 <CardTitle className="font-headline text-2xl text-primary">Business Hours</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg">Monday - Friday: 9:00 AM - 6:00 PM (PST)</p>
+                <p className="text-lg">Saturday - Thursday: 8:00 AM - 5:00 PM</p>
                 <p className="text-muted-foreground">Online platform available 24/7 for quotes.</p>
               </CardContent>
             </Card>
