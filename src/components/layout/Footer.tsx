@@ -15,7 +15,7 @@ const footerLinkGroups = [
     title: 'Capabilities',
     links: [
       { href: '/capabilities/cnc-machining', text: 'CNC Machining' },
-      { href: '/capabilities/injection-moulding', text: 'Injection Moulding' },
+      { href: '/capabilities/laser-cutting', text: 'Laser Cutting' },
       { href: '/capabilities/sheet-metal', text: 'Sheet Metal' },
       { href: '/capabilities/3d-printing', text: '3D Printing' },
     ],
@@ -24,7 +24,7 @@ const footerLinkGroups = [
     title: 'Materials',
     links: [
       { href: '/materials/cnc-machining', text: 'CNC Machining Materials' },
-      { href: '/materials/injection-moulding', text: 'Injection Moulding Materials' },
+      { href: '/materials/laser-cutting', text: 'Laser Cutting Materials' },
       { href: '/materials/sheet-metal', text: 'Sheet Metal Materials' },
       { href: '/materials/3d-printing', text: '3D Printing Materials' },
     ],
@@ -34,7 +34,7 @@ const footerLinkGroups = [
     links: [
       { href: '/resources/manufacturing-resources', text: 'Manufacturing Resources' },
       { href: '/resources/cnc-design-guide', text: 'CNC Design Guide' },
-      { href: '/resources/injection-moulding-design-guide', text: 'Injection Moulding Design Guide' },
+      { href: '/resources/laser-cutting-design-guide', text: 'Laser Cutting Design Guide' },
       { href: '/resources/sheet-metal-design-guide', text: 'Sheet Metal Design Guide' },
       { href: '/resources/3d-printing-design-guide', text: '3D Printing Design Guide' },
     ],
@@ -126,3 +126,4 @@ export function Footer() {
     </footer>
   );
 }
+

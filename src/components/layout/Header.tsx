@@ -12,7 +12,7 @@ import { ChevronDown } from 'lucide-react';
 
 const serviceLinks = [
   { href: '/capabilities/cnc-machining', label: 'CNC Machining' },
-  { href: '/capabilities/injection-moulding', label: 'Injection Moulding' },
+  { href: '/capabilities/laser-cutting', label: 'Laser Cutting' },
   { href: '/capabilities/sheet-metal', label: 'Sheet Metal Fabrication' },
   { href: '/capabilities/3d-printing', label: '3D Printing' },
 ];
@@ -24,7 +24,7 @@ const productLinks = [
 
 const materialLinks = [
   { href: '/materials/cnc-machining', label: 'CNC Machining Materials' },
-  { href: '/materials/injection-moulding', label: 'Injection Moulding Materials' },
+  { href: '/materials/laser-cutting', label: 'Laser Cutting Materials' },
   { href: '/materials/sheet-metal', label: 'Sheet Metal Materials' },
   { href: '/materials/3d-printing', label: '3D Printing Materials' },
 ];
@@ -102,3 +102,4 @@ export function Header() {
     </header>
   );
 }
+

@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { BookOpen, Wrench, Lightbulb } from 'lucide-react';
+import { BookOpen, Wrench, Lightbulb, Zap } from 'lucide-react'; // Added Zap for Laser Cutting
 
 export const metadata: Metadata = {
   title: 'Manufacturing Resources - Inventex Labs',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const resourceItems = [
   { title: "CNC Design Guide", href: "/resources/cnc-design-guide", description: "Best practices for designing parts for CNC machining.", icon: Wrench },
-  { title: "Injection Moulding Design Guide", href: "/resources/injection-moulding-design-guide", description: "Tips for optimizing designs for injection moulding.", icon: Wrench },
+  { title: "Laser Cutting Design Guide", href: "/resources/laser-cutting-design-guide", description: "Tips for optimizing designs for laser cutting.", icon: Zap },
   { title: "Sheet Metal Design Guide", href: "/resources/sheet-metal-design-guide", description: "Considerations for effective sheet metal part design.", icon: Wrench },
   { title: "3D Printing Design Guide", href: "/resources/3d-printing-design-guide", description: "Guidelines for designing for various 3D printing technologies.", icon: Wrench },
   { title: "Material Selection Guides", href: "/materials", description: "Information on various materials for manufacturing processes.", icon: BookOpen },
@@ -60,3 +60,4 @@ export default function ManufacturingResourcesPage() {
     </div>
   );
 }
+
