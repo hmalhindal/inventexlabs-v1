@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { SheetMetal } from 'lucide-react';
+import { Sheet } from 'lucide-react';
 
 export function Header() {
   return (
     <header className="bg-card border-b border-border shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <SheetMetal className="h-8 w-8 text-primary group-hover:animate-pulse" />
+          <Sheet className="h-8 w-8 text-primary group-hover:animate-pulse" />
           <h1 className="font-headline text-2xl font-bold text-primary">
             FabQuote
           </h1>

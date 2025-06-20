@@ -3,7 +3,7 @@
 import type { EstimateQuotationOutput } from '@/ai/flows/estimate-quotation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription as ShadcnFormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -147,7 +147,7 @@ export function QuoteForm({ setQuotation, setIsLoading }: QuoteFormProps) {
                        />
                     </div>
                   </FormControl>
-                  <FormDescription>Supported formats: DXF, DWG, STEP, IGES. Max 10MB.</FormDescription>
+                  <ShadcnFormDescription>Supported formats: DXF, DWG, STEP, IGES. Max 10MB.</ShadcnFormDescription>
                   <FormMessage />
                 </FormItem>
               )}
