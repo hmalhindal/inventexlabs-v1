@@ -1,4 +1,6 @@
 
+'use client'; // Add this directive
+
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -6,13 +8,17 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import type { Metadata } from 'next';
+// Removed Metadata type import as it's not used in client components directly for this purpose
+// import type { Metadata } from 'next'; 
 import { Mail, Phone, MapPin } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Contact Us - Inventex Labs',
-  description: 'Get in touch with Inventex Labs for inquiries, support, or partnership opportunities. We are here to help.',
-};
+// Metadata should be exported separately if needed, or handled in a layout if this page remains client-side focused.
+// For client components, 'metadata' export isn't directly used by Next.js for page metadata.
+// If static metadata is needed, it should be in a parent layout or a server component.
+// export const metadata: Metadata = { 
+// title: 'Contact Us - Inventex Labs',
+// description: 'Get in touch with Inventex Labs for inquiries, support, or partnership opportunities. We are here to help.',
+// };
 
 export default function ContactUsPage() {
   // In a real app, you'd handle form submission, e.g., with a server action
