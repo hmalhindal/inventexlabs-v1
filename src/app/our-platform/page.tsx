@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { CheckCircle, Users, MessageSquare, Search, CreditCard, Book, MessageCircle, Truck, Edit } from 'lucide-react';
+import { CheckCircle, Users, MessageSquare, Search, CreditCard, Book, MessageCircle as ChatIcon, Truck, Edit, Layers, ShieldCheck } from 'lucide-react'; // Added Layers, ShieldCheck and aliased MessageCircle to ChatIcon
 
 export const metadata: Metadata = {
   title: 'Our Platform - Inventex Labs',
@@ -31,7 +31,7 @@ export default function OurPlatformPage() {
     { 
       title: "Broad Material & Process Selection", 
       description: "Access a wide array of manufacturing processes like CNC machining and laser cutting, with a diverse selection of metals and plastics.",
-      icon: Layers, // Re-using existing from Header
+      icon: Layers,
     },
     { 
       title: "Transparent Pricing", 
@@ -41,7 +41,7 @@ export default function OurPlatformPage() {
     { 
       title: "Secure & Confidential Platform", 
       description: "We prioritize the security of your intellectual property with robust data protection measures and confidential handling of all design files.",
-      icon: ShieldCheck, // Re-using existing from Privacy Policy
+      icon: ShieldCheck,
     },
     { 
       title: "Order Tracking & Management", 
@@ -61,17 +61,17 @@ export default function OurPlatformPage() {
     { 
       title: "Live Chat Support (Coming Soon)", 
       description: "Get instant assistance from our support team through live chat for any queries regarding your designs, orders, or platform usage.",
-      icon: MessageCircle,
+      icon: ChatIcon, // Using aliased ChatIcon
     },
     { 
       title: "Flexible Payment Integration", 
       description: "Securely pay for your orders using multiple payment methods, including major credit cards and other popular online payment systems.",
-      icon: CreditCard,
+      icon: CreditCard, // Re-using CreditCard icon
     },
     { 
       title: "Versatile Shipping Options", 
       description: "Choose from various domestic and international shipping options with transparent, real-time cost calculations at checkout.",
-      icon: Truck,
+      icon: Truck, // Re-using Truck icon
     },
     { 
       title: "Collaboration Tools (Coming Soon)", 
