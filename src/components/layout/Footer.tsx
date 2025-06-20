@@ -12,13 +12,13 @@ const footerLinkGroups = [
     ],
   },
   {
-    title: 'Services', // Renamed from Capabilities
+    title: 'Services',
     links: [
       { href: '/capabilities/cnc-machining', text: 'CNC Machining' },
       { href: '/capabilities/laser-cutting', text: 'Laser Cutting' },
       { href: '/capabilities/sheet-metal', text: 'Sheet Metal' },
       { href: '/capabilities/signs-and-banners', text: 'Signs & Banners' },
-      { href: '/capabilities/digital-printing', text: 'Digital Printing' }, // Added
+      { href: '/capabilities/digital-printing', text: 'Digital Printing' },
     ],
   },
   {
@@ -48,6 +48,7 @@ const footerLinkGroups = [
       { href: '/our-partners', text: 'Our Partners' },
       { href: '/privacy-policy', text: 'Privacy Policy' },
       { href: '/terms-conditions', text: 'Terms & Conditions' },
+      { href: '/delivery-information', text: 'Delivery Information' },
     ],
   },
   {
