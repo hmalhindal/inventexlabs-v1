@@ -38,6 +38,7 @@ const footerLinkGroups = [
       { href: '/resources/laser-cutting-design-guide', text: 'Laser Cutting Design Guide' },
       { href: '/resources/sheet-metal-design-guide', text: 'Sheet Metal Design Guide' },
       { href: '/resources/3d-printing-design-guide', text: '3D Printing Design Guide' },
+      { href: '/downloads-faq', text: 'Downloads & FAQ' },
     ],
   },
   {
