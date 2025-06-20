@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { InventexLogo } from '@/components/icons/InventexLogo';
+import { Sheet } from 'lucide-react';
 
 export function Header() {
   return (
@@ -8,7 +9,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2 group">
           <InventexLogo className="h-10 w-auto text-primary group-hover:opacity-80 transition-opacity" />
           <h1 className="font-headline text-2xl font-bold text-primary hidden sm:block">
-            Inventex Labs
+            مصنع انفنتكس
           </h1>
         </Link>
         <nav className="flex items-center gap-4">
