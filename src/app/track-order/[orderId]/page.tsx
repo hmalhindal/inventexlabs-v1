@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -80,7 +81,7 @@ export default function TrackOrderPage({ params }: { params: { orderId: string }
             <div className="text-center">
               <p className="text-muted-foreground mb-2">Need help with your order?</p>
               <Button variant="outline" asChild>
-                <Link href="/contact-support">Contact Support</Link>
+                <Link href="/contact-us">Contact Support</Link>
               </Button>
             </div>
           </CardContent>
