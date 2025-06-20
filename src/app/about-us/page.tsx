@@ -25,11 +25,11 @@ export default function AboutUsPage() {
           <CardContent className="space-y-6 text-lg">
             <Image 
               src="https://placehold.co/800x400.png" 
-              alt="Inventex Labs Team or Facility" 
+              alt="Inventex Labs Logo" 
               width={800} 
               height={400} 
               className="rounded-lg mb-6"
-              data-ai-hint="team meeting" 
+              data-ai-hint="logo branding" 
             />
             <p>
               At Inventex Labs, we are dedicated to revolutionizing the manufacturing industry by integrating cutting-edge technology with expert craftsmanship. Our platform provides seamless access to on-demand manufacturing services, empowering innovators, engineers, and businesses to bring their ideas to life faster and more efficiently than ever before.
