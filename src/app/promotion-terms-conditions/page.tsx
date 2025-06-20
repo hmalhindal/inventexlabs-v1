@@ -27,7 +27,7 @@ export default function PromotionTermsPage() {
             <p className="text-sm text-muted-foreground mt-2">Last Updated: {lastUpdated}</p>
           </CardHeader>
           <CardContent className="pt-6 space-y-6 text-base prose prose-slate dark:prose-invert max-w-none">
-            <p>From time to time, Inventex Labs may offer promotions, discounts, or special offers ("Promotions"). These Promotion Terms & Conditions govern the use and redemption of such Promotions, in addition to our standard <a href="/terms-conditions" className="text-primary hover:underline">Terms & Conditions</a> and <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>.</p>
+            <p>From time to time, Inventex Labs may offer promotions, discounts, or special offers ("Promotions"). These Promotion Terms & Conditions govern the use and redemption of such Promotions, in addition to our standard <a href="/terms-conditions#terms-conditions-section" className="text-primary hover:underline">Terms & Conditions</a> and <a href="/terms-conditions#privacy-policy-section" className="text-primary hover:underline">Privacy Policy</a>.</p>
 
             <h2>1. General Promotion Terms</h2>
             <ul>

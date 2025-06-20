@@ -27,7 +27,7 @@ export default function ReferralTermsPage() {
             <p className="text-sm text-muted-foreground mt-2">Last Updated: {lastUpdated}</p>
           </CardHeader>
           <CardContent className="pt-6 space-y-6 text-base prose prose-slate dark:prose-invert max-w-none">
-            <p>Welcome to the Inventex Labs Referral Program ("Program"). By participating in the Program, you agree to these Referral Program Terms & Conditions, as well as our standard <a href="/terms-conditions" className="text-primary hover:underline">Terms & Conditions</a> and <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>.</p>
+            <p>Welcome to the Inventex Labs Referral Program ("Program"). By participating in the Program, you agree to these Referral Program Terms & Conditions, as well as our standard <a href="/terms-conditions#terms-conditions-section" className="text-primary hover:underline">Terms & Conditions</a> and <a href="/terms-conditions#privacy-policy-section" className="text-primary hover:underline">Privacy Policy</a>.</p>
 
             <h2>1. Eligibility</h2>
             <ul>

@@ -46,8 +46,7 @@ const footerLinkGroups = [
     links: [
       { href: '/careers', text: 'Careers' },
       { href: '/our-partners', text: 'Our Partners' },
-      { href: '/privacy-policy', text: 'Privacy Policy' },
-      { href: '/terms-conditions', text: 'Terms & Conditions' },
+      { href: '/terms-conditions', text: 'Terms & Privacy' },
       { href: '/delivery-information', text: 'Delivery Information' },
     ],
   },
