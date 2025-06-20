@@ -15,6 +15,7 @@ const serviceLinks = [
   { href: '/capabilities/laser-cutting', label: 'Laser Cutting' },
   { href: '/capabilities/sheet-metal', label: 'Sheet Metal Fabrication' },
   { href: '/capabilities/3d-printing', label: '3D Printing' },
+  { href: '/capabilities/signs-and-banners', label: 'Signs & Banners' },
 ];
 
 const productLinks = [
@@ -102,4 +103,3 @@ export function Header() {
     </header>
   );
 }
-

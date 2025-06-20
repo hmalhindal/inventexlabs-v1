@@ -18,6 +18,7 @@ const footerLinkGroups = [
       { href: '/capabilities/laser-cutting', text: 'Laser Cutting' },
       { href: '/capabilities/sheet-metal', text: 'Sheet Metal' },
       { href: '/capabilities/3d-printing', text: '3D Printing' },
+      { href: '/capabilities/signs-and-banners', text: 'Signs & Banners' },
     ],
   },
   {
@@ -126,4 +127,3 @@ export function Footer() {
     </footer>
   );
 }
-

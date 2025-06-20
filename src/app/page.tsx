@@ -33,6 +33,7 @@ const servicesData: Service[] = [
   { name: 'Website Design', icon: MonitorSmartphone },
   { name: 'International Flags', icon: Flag },
   { name: 'Laser Cutting', icon: Zap },
+  { name: 'Signs & Banners', icon: Flag }, // Added new service
 ];
 
 export default function HomePage() {
