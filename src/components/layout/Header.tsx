@@ -41,7 +41,7 @@ export function Header() {
           </h1>
         </Link>
         
-        <nav className="flex items-center gap-2 md:gap-3">
+        <nav className="flex items-center gap-1 md:gap-2">
           <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-2 py-1.5 rounded-md">
             Home
           </Link>
@@ -90,6 +90,10 @@ export function Header() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+
+          <Link href="/online-design-tool" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-2 py-1.5 rounded-md">
+            Design Tool
+          </Link>
 
           <Link href="/contact-us" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-2 py-1.5 rounded-md">
             Contact Us
