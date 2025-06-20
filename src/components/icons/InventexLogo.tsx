@@ -8,7 +8,7 @@ export function InventexLogo({ className, width = 180, height = 48 }: { classNam
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="Inventex Labs Logo"
+      aria-label="Inventex Logo"
     >
       {/* Stylized 'A' symbol part - simplified geometric shape */}
       <path
