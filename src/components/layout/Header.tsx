@@ -148,8 +148,6 @@ export function Header() {
       icon: Layers,
       dropdown: true,
       items: [
-        { href: '/materials/cnc-machining', label: 'CNC Materials', icon: Cog },
-        { href: '/materials/laser-cutting', label: 'Laser Materials', icon: Zap },
         { href: '/materials/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
         { href: '/materials/acrylic', label: 'Acrylic', icon: Layers },
         { href: '/materials/wood', label: 'Wood', icon: Layers },
