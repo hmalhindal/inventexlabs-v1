@@ -30,7 +30,7 @@ import {
   Cog, // CNC Machining
   LayoutPanelLeft, // Sheet Metal
   Printer, // Digital Printing
-  Users, // Marketplace
+  Cpu, // Machinery
   LayoutGrid, // All Services
 } from 'lucide-react';
 import * as SignIcons from '@/components/icons/SignIcons';
@@ -91,6 +91,7 @@ const navLinks = [
       { href: '/materials/styrofoam', label: 'Styrofoam', icon: Layers },
     ]
   },
+  { href: '/machinery', label: 'Machinery', icon: Cpu },
   { 
     label: 'Signs & Banners', 
     icon: Flag, 
@@ -108,7 +109,6 @@ function SignsMegaMenu() {
     <DropdownMenuContent 
       align="start" 
       className="w-[90vw] max-w-6xl p-6 bg-background/95 backdrop-blur-sm"
-      onMouseLeave={(e) => (e.currentTarget as HTMLElement).blur()}
     >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
         {signMenuItems.map((item) => (
