@@ -30,7 +30,7 @@ export function InventexLogo({ className, width = 180, height = 48 }: { classNam
         fontFamily="Space Grotesk, sans-serif"
         fontSize="26" // Slightly larger font
         fontWeight="bold"
-        fill="hsl(var(--foreground))"
+        fill="currentColor"
       >
         Invent
       </text>
