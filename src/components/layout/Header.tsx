@@ -7,6 +7,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import {
   Tooltip,
@@ -29,6 +30,7 @@ import {
   LayoutPanelLeft, // Sheet Metal
   Printer, // Digital Printing
   Users, // Marketplace
+  LayoutGrid, // All Services
 } from 'lucide-react';
 
 const navLinks = [
@@ -39,6 +41,8 @@ const navLinks = [
     icon: Settings,
     dropdown: true,
     items: [
+      { href: '/services', label: 'All Services', icon: LayoutGrid },
+      { type: 'separator' },
       { href: '/capabilities/cnc-machining', label: 'CNC Machining', icon: Cog },
       { href: '/capabilities/laser-cutting', label: 'Laser Cutting', icon: Zap },
       { href: '/capabilities/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
@@ -100,14 +104,22 @@ export function Header() {
                     </TooltipContent>
                   </Tooltip>
                   <DropdownMenuContent align="start">
-                    {link.items?.map(item => (
-                      <DropdownMenuItem key={item.href} asChild>
-                        <Link href={item.href} className="flex items-center gap-2 w-full">
-                          <item.icon className="h-4 w-4 text-muted-foreground" />
-                          {item.label}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
+                    {link.items?.map((item, index) => {
+                      if ('type' in item && item.type === 'separator') {
+                        return <DropdownMenuSeparator key={`sep-${index}`} />;
+                      }
+                      if ('href' in item) {
+                        return (
+                          <DropdownMenuItem key={item.href} asChild>
+                            <Link href={item.href} className="flex items-center gap-2 w-full">
+                              <item.icon className="h-4 w-4 text-muted-foreground" />
+                              {item.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        );
+                      }
+                      return null;
+                    })}
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
