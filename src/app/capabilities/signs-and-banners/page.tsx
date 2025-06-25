@@ -13,12 +13,45 @@ export const metadata: Metadata = {
   description: 'Custom signs, banners, and display solutions for your business and events at Inventex Labs.',
 };
 
+const mountingOptions = [
+  {
+    title: "Skeleton",
+    description: "Neon is mounted directly to your wall, giving a very clean look. Note: Requires professional installation.",
+    image: "https://placehold.co/400x250.png",
+    imageHint: "neon sign"
+  },
+  {
+    title: "Acrylic",
+    description: "Neon is mounted on to a clear acrylic sheet. Screw holes are added so the sign is easy to mount.",
+    image: "https://placehold.co/400x250.png",
+    imageHint: "neon sign acrylic"
+  },
+  {
+    title: "Acrylic Box",
+    description: "Neon is mounted into a clear acrylic box. Great for areas with potential for damage, like public spaces. The front is removable for cleaning.",
+    image: "https://placehold.co/400x250.png",
+    imageHint: "neon sign box"
+  },
+  {
+    title: "Tray Mounted",
+    description: "Neon is mounted on the face of the tray. Trays can be painted any color, and transformers can be hidden behind the tray.",
+    image: "https://placehold.co/400x250.png",
+    imageHint: "neon sign tray"
+  },
+  {
+    title: "Wire Cage",
+    description: "Neon is mounted behind a wire cage, giving a vintage/retro feel while adding protection from damage.",
+    image: "https://placehold.co/400x250.png",
+    imageHint: "neon sign cage"
+  }
+];
+
 export default function SignsAndBannersPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12">
-        <Card className="w-full max-w-4xl mx-auto shadow-lg">
+        <Card className="w-full max-w-6xl mx-auto shadow-lg">
           <CardHeader className="text-center">
             <Flag className="h-12 w-12 text-primary mx-auto mb-3" />
             <CardTitle className="font-headline text-4xl text-primary mb-2">Signs & Banners Services</CardTitle>
@@ -28,10 +61,10 @@ export default function SignsAndBannersPage() {
           </CardHeader>
           <CardContent className="space-y-6 text-lg">
             <Image 
-              src="https://placehold.co/800x400.png" 
+              src="https://placehold.co/1200x500.png" 
               alt="Various custom signs and banners" 
-              width={800} 
-              height={400} 
+              width={1200} 
+              height={500} 
               className="rounded-lg mb-6"
               data-ai-hint="signage display"
             />
@@ -41,29 +74,41 @@ export default function SignsAndBannersPage() {
             <p>
               Our state-of-the-art printing and fabrication technologies ensure crisp graphics, vivid colors, and long-lasting materials. Whether you need a single banner or a complete signage package for your business, our team is ready to assist.
             </p>
-            <div className="my-6 flex justify-center">
-              <Image 
-                src="https://placehold.co/300x200.png"
-                alt="Inventex Labs Signs & Banners Showcase"
-                width={300} 
-                height={200} 
-                className="rounded-md shadow-md"
-                data-ai-hint="banner stand"
-              />
+
+            <h2 className="font-headline text-3xl text-primary pt-8 text-center">Our Signage Offerings</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+                {['LED Letter sign', 'Marquee Letters', 'LED neon sign', 'Neon sign toolkit', 'Signage lightbox', 'Infinity mirror lightbox', 'Ultra thin lightbox', 'Blade sign', 'Braille & ADA Sign'].map(item => (
+                    <Card key={item} className="p-4 bg-card hover:shadow-md transition-shadow">
+                        <CardTitle className="text-base font-semibold text-card-foreground">{item}</CardTitle>
+                    </Card>
+                ))}
             </div>
-            <h2 className="font-headline text-2xl text-primary pt-4">Our Sign & Banner Offerings Include:</h2>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li><span className="font-semibold text-foreground">LED Letter sign</span></li>
-              <li><span className="font-semibold text-foreground">Marquee Letters</span></li>
-              <li><span className="font-semibold text-foreground">LED neon sign</span></li>
-              <li><span className="font-semibold text-foreground">Neon sign toolkit</span></li>
-              <li><span className="font-semibold text-foreground">Signage lightbox</span></li>
-              <li><span className="font-semibold text-foreground">Infinity mirror lightbox</span></li>
-              <li><span className="font-semibold text-foreground">Ultra thin lightbox</span></li>
-              <li><span className="font-semibold text-foreground">Blade sign</span></li>
-              <li><span className="font-semibold text-foreground">Braille & ADA Sign</span></li>
-            </ul>
-            <p className="pt-4">
+
+            <section className="pt-12">
+              <h2 className="font-headline text-3xl text-primary pt-8 text-center mb-8">Neon Mounting Options</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                {mountingOptions.map((option) => (
+                  <Card key={option.title} className="flex flex-col text-center bg-card hover:shadow-lg transition-shadow">
+                    <Image
+                      src={option.image}
+                      alt={option.title}
+                      width={400}
+                      height={250}
+                      className="rounded-t-lg object-cover"
+                      data-ai-hint={option.imageHint}
+                    />
+                    <CardHeader className="pb-2">
+                      <CardTitle className="font-headline text-lg text-primary">{option.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-sm text-muted-foreground">{option.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+
+            <p className="pt-8 text-center">
               Let us help you create impactful visual communications. Contact us to discuss your project or upload your design for a custom quote.
             </p>
             <div className="text-center pt-6">
@@ -78,4 +123,3 @@ export default function SignsAndBannersPage() {
     </div>
   );
 }
-
