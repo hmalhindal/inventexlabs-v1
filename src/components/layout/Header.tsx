@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -34,6 +33,7 @@ import {
   LayoutGrid, // All Services
 } from 'lucide-react';
 import * as SignIcons from '@/components/icons/SignIcons';
+import * as ProductIcons from '@/components/icons/ProductIcons';
 
 const signMenuItems = [
   { href: '/capabilities/signs-and-banners/all', label: 'All Signs', icon: SignIcons.AllSignsIcon },
@@ -60,43 +60,13 @@ const signMenuItems = [
   { href: '/capabilities/signs-and-banners/artworking-hours', label: 'Artworking Hours', icon: SignIcons.ArtworkingHoursIcon },
 ];
 
-
-const navLinks = [
-  { href: '/', label: 'Home', icon: Home },
-  { href: '/products', label: 'Products', icon: Package },
-  { 
-    label: 'Services', 
-    icon: Settings,
-    dropdown: true,
-    items: [
-      { href: '/services', label: 'All Services', icon: LayoutGrid },
-      { type: 'separator' as const },
-      { href: '/capabilities/cnc-machining', label: 'CNC Machining', icon: Cog },
-      { href: '/capabilities/laser-cutting', label: 'Laser Cutting', icon: Zap },
-      { href: '/capabilities/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
-      { href: '/capabilities/digital-printing', label: 'Digital Printing', icon: Printer },
-    ]
-  },
-  { 
-    label: 'Materials', 
-    icon: Layers,
-    dropdown: true,
-    items: [
-      { href: '/materials/cnc-machining', label: 'CNC Materials', icon: Cog },
-      { href: '/materials/laser-cutting', label: 'Laser Materials', icon: Zap },
-      { href: '/materials/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
-      { href: '/materials/acrylic', label: 'Acrylic', icon: Layers },
-      { href: '/materials/wood', label: 'Wood', icon: Layers },
-      { href: '/materials/aluminum', label: 'Aluminum', icon: Layers },
-      { href: '/materials/styrofoam', label: 'Styrofoam', icon: Layers },
-    ]
-  },
-  { href: '/machinery', label: 'Machinery', icon: Cpu },
-  { 
-    label: 'Signs & Banners', 
-    icon: Flag, 
-    isMegaMenu: true 
-  },
+const productMenuItems = [
+  { href: '/products/all', label: 'All Products', icon: ProductIcons.AllProductsIcon },
+  { href: '/products/home-decor', label: 'Home Decor', icon: ProductIcons.HomeDecorIcon },
+  { href: '/products/acrylic', label: 'Acrylic Products', icon: ProductIcons.AcrylicProductsIcon },
+  { href: '/products/boxes', label: 'Boxes', icon: ProductIcons.BoxesIcon },
+  { href: '/products/gifts', label: 'Gifts', icon: ProductIcons.GiftsIcon },
+  { href: '/products/backdrops', label: 'Backdrops', icon: ProductIcons.BackdropsIcon },
 ];
 
 const ctaButtons = [
@@ -127,8 +97,71 @@ function SignsMegaMenu() {
   );
 }
 
+function ProductsMegaMenu() {
+  return (
+    <DropdownMenuContent 
+      align="start" 
+      className="max-w-xs p-6 bg-background/95 backdrop-blur-sm"
+    >
+      <div className="grid grid-cols-2 gap-4">
+        {productMenuItems.map((item) => (
+          <DropdownMenuItem key={item.label} asChild className="p-0">
+            <Link href={item.href} className="flex flex-col items-center justify-center gap-2 p-3 rounded-md hover:bg-accent focus:bg-accent focus:outline-none">
+              <item.icon className="h-10 w-10 text-primary shrink-0" />
+              <span className="font-medium text-foreground text-center">{item.label}</span>
+            </Link>
+          </DropdownMenuItem>
+        ))}
+      </div>
+    </DropdownMenuContent>
+  );
+}
+
 
 export function Header() {
+  // Define navLinks inside the component so it can use other components
+  const navLinks = [
+    { href: '/', label: 'Home', icon: Home },
+    { 
+      label: 'Products', 
+      icon: Package,
+      menu: <ProductsMegaMenu />
+    },
+    { 
+      label: 'Services', 
+      icon: Settings,
+      dropdown: true,
+      items: [
+        { href: '/services', label: 'All Services', icon: LayoutGrid },
+        { type: 'separator' as const },
+        { href: '/capabilities/cnc-machining', label: 'CNC Machining', icon: Cog },
+        { href: '/capabilities/laser-cutting', label: 'Laser Cutting', icon: Zap },
+        { href: '/capabilities/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
+        { href: '/capabilities/digital-printing', label: 'Digital Printing', icon: Printer },
+      ]
+    },
+    { 
+      label: 'Materials', 
+      icon: Layers,
+      dropdown: true,
+      items: [
+        { href: '/materials/cnc-machining', label: 'CNC Materials', icon: Cog },
+        { href: '/materials/laser-cutting', label: 'Laser Materials', icon: Zap },
+        { href: '/materials/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
+        { href: '/materials/acrylic', label: 'Acrylic', icon: Layers },
+        { href: '/materials/wood', label: 'Wood', icon: Layers },
+        { href: '/materials/aluminum', label: 'Aluminum', icon: Layers },
+        { href: '/materials/styrofoam', label: 'Styrofoam', icon: Layers },
+      ]
+    },
+    { href: '/machinery', label: 'Machinery', icon: Cpu },
+    { 
+      label: 'Signs & Banners', 
+      icon: Flag, 
+      menu: <SignsMegaMenu />
+    },
+  ];
+
   return (
     <header className="bg-card border-b border-border shadow-sm sticky top-0 z-50">
       <TooltipProvider delayDuration={100}>
@@ -163,7 +196,7 @@ export function Header() {
           {/* Bottom Row - Main Navigation */}
           <nav className="flex items-center justify-center gap-1 md:gap-2 flex-wrap border-t border-border mt-2 pt-2">
             {navLinks.map((link) => {
-              if (link.isMegaMenu) {
+              if (link.menu) {
                  return (
                   <DropdownMenu key={link.label}>
                     <Tooltip>
@@ -179,7 +212,7 @@ export function Header() {
                         <p>{link.label}</p>
                       </TooltipContent>
                     </Tooltip>
-                    <SignsMegaMenu />
+                    {link.menu}
                   </DropdownMenu>
                  )
               }
