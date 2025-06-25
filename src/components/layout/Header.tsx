@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -95,7 +96,6 @@ const navLinks = [
     icon: Flag, 
     isMegaMenu: true 
   },
-  { href: '/marketplace', label: 'Marketplace', icon: Users },
 ];
 
 const ctaButtons = [

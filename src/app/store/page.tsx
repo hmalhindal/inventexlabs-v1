@@ -1,102 +1,204 @@
 
+'use client';
+
+import { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ShoppingCart, Clock, Layers, Trees, RectangleHorizontal, Truck, Flag, Scissors, type LucideProps } from 'lucide-react';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { 
+  ShoppingCart as ShoppingCartIcon,
+  Package, 
+  Award, 
+  Filter, 
+  LayoutGrid, 
+  List, 
+  Heart, 
+  ShoppingCart, 
+  Star,
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-export const metadata: Metadata = {
-  title: 'Online Store - Inventex Labs',
-  description: 'Browse and purchase products from the Inventex Labs online store. Shopify integration coming soon!',
-};
-
-interface ProductCategory {
-  name: string;
-  slug: string;
-  icon: React.FC<LucideProps>;
-  description: string;
-  image_hint: string;
-}
-
-const productCategories: ProductCategory[] = [
-  { name: 'Acrylic Products', slug: 'acrylic', icon: Layers, description: 'Custom cut acrylic sheets and products.', image_hint: 'acrylic sheet' },
-  { name: 'Wood Products', slug: 'wood', icon: Trees, description: 'Engraved and cut wood items.', image_hint: 'wood craft' },
-  { name: 'Backdrops & Displays', slug: 'backdrops', icon: RectangleHorizontal, description: 'Custom backdrops for events and photography.', image_hint: 'event backdrop' },
-  { name: 'Trolley Carts', slug: 'trolley-carts', icon: Truck, description: 'Customizable utility and display carts.', image_hint: 'utility cart' },
-  { name: 'Signs & Banners', slug: 'signs-banners', icon: Flag, description: 'Promotional and informational signage.', image_hint: 'banner sign' },
-  { name: 'Stickers (Print & Cut)', slug: 'stickers', icon: Scissors, description: 'Custom die-cut stickers and labels.', image_hint: 'sticker sheet' },
+const categories = [
+  { name: 'All Products', count: 156 },
+  { name: 'Business Signs', count: 45 },
+  { name: 'Home Decor', count: 38 },
+  { name: 'Accessories', count: 28 },
+  { name: 'Prototypes', count: 22 },
+  { name: 'Keychains', count: 15 },
+  { name: 'Office Items', count: 8 },
 ];
 
+const products = [
+  {
+    id: 1,
+    type: 'dark',
+    featured: true,
+    title: 'Custom Business Sign',
+    vendor: 'Inventex Labs',
+    rating: 4.8,
+    reviews: 24,
+    image: 'https://placehold.co/600x400.png',
+    imageHint: 'service list dark'
+  },
+  {
+    id: 2,
+    type: 'light',
+    featured: false,
+    title: 'Modern Wall Art',
+    vendor: 'Inventex Labs',
+    rating: 4.6,
+    reviews: 12,
+    image: 'https://placehold.co/600x400.png',
+    imageHint: 'promo card light'
+  },
+  {
+    id: 3,
+    type: 'light',
+    featured: true,
+    title: 'Personalized Keychain',
+    vendor: 'Inventex Labs',
+    rating: 4.9,
+    reviews: 45,
+    image: 'https://placehold.co/600x400.png',
+    imageHint: 'features list light'
+  },
+  {
+    id: 4,
+    type: 'light',
+    featured: false,
+    title: 'Engraved Wood Coasters',
+    vendor: 'Inventex Labs',
+    rating: 4.7,
+    reviews: 31,
+    image: 'https://placehold.co/600x400.png',
+    imageHint: 'wood coasters drink'
+  },
+  {
+    id: 5,
+    type: 'light',
+    featured: false,
+    title: 'Acrylic Photo Block',
+    vendor: 'Inventex Labs',
+    rating: 4.8,
+    reviews: 19,
+    image: 'https://placehold.co/600x400.png',
+    imageHint: 'photo frame acrylic'
+  },
+  {
+    id: 6,
+    type: 'dark',
+    featured: false,
+    title: 'Metal Business Cards',
+    vendor: 'Inventex Labs',
+    rating: 5.0,
+    reviews: 10,
+    image: 'https://placehold.co/600x400.png',
+    imageHint: 'metal business card'
+  },
+];
+
+
 export default function StorePage() {
+  const [activeCategory, setActiveCategory] = useState('All Products');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-secondary/20">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <ShoppingCart className="h-16 w-16 text-primary mx-auto mb-4" />
-          <h1 className="font-headline text-4xl md:text-5xl text-primary mb-3">Inventex Labs Store</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Our online store is currently under development. Products will be available soon!
+      <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
+        
+        <section className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Inventex Labs <span className="text-primary">Online Store</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
+            Discover unique laser-cut products designed and fabricated by Inventex Labs. From custom signs to personalized accessories.
           </p>
-        </div>
-
-        <Card className="w-full max-w-4xl mx-auto shadow-lg mb-12">
-          <CardHeader>
-            <CardTitle className="font-headline text-2xl text-primary flex items-center gap-2">
-              <Clock className="h-6 w-6" /> Shopify Integration Coming Soon
-            </CardTitle>
-            <CardDescription>
-              We are working hard to bring you a seamless shopping experience for all our products.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6 text-lg">
-            <Image
-              src="https://placehold.co/800x300.png"
-              alt="Store placeholder graphic"
-              width={800}
-              height={300}
-              className="rounded-lg mb-6"
-              data-ai-hint="online shopping"
-            />
-            <p>
-              Our online store will feature a range of products and manufacturing aids. We are planning to integrate with Shopify for a secure and convenient checkout process.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Thank you for your patience. Check back soon for updates!
-            </p>
-          </CardContent>
-        </Card>
-
-        <section className="mb-16">
-          <h2 className="font-headline text-3xl text-primary mb-8 text-center">Featured Categories (Coming Soon)</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {productCategories.map((category) => (
-              <Link key={category.slug} href={`/products/${category.slug}`} passHref>
-                <Card className="flex flex-col h-full shadow-md hover:shadow-lg transition-shadow cursor-pointer">
-                  <CardHeader className="items-center text-center pb-3">
-                    <category.icon className="h-10 w-10 text-primary mb-3" />
-                    <CardTitle className="font-headline text-xl text-foreground">{category.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center flex-grow">
-                    <p className="text-sm text-muted-foreground">{category.description}</p>
-                  </CardContent>
-                  <div className="p-4 pt-2 text-center">
-                    <span className="text-xs text-primary hover:underline">View Products &rarr;</span>
-                  </div>
-                </Card>
-              </Link>
-            ))}
+          <div className="flex justify-center items-center gap-4 flex-wrap">
+            <Badge variant="outline" className="text-sm py-2 px-4 bg-background"><Package className="h-4 w-4 mr-2" /> 150+ Products</Badge>
+            <Badge variant="outline" className="text-sm py-2 px-4 bg-background"><ShoppingCartIcon className="h-4 w-4 mr-2" /> Secure Shopping</Badge>
+            <Badge variant="outline" className="text-sm py-2 px-4 bg-background"><Award className="h-4 w-4 mr-2" /> Premium Quality</Badge>
           </div>
         </section>
-        
-        <div className="text-center">
-             <p className="text-lg text-muted-foreground">
-              In the meantime, you can explore our <Link href="/" className="text-primary hover:underline">custom manufacturing services</Link> or <Link href="/contact-us" className="text-primary hover:underline">contact us</Link> if you have specific inquiries.
-            </p>
-        </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
+          
+          <aside>
+            <Card className="p-4 bg-background sticky top-24">
+              <h2 className="text-lg font-semibold mb-4 px-2">Categories</h2>
+              <div className="flex flex-col gap-1">
+                {categories.map((category) => (
+                  <Button
+                    key={category.name}
+                    variant={activeCategory === category.name ? 'default' : 'ghost'}
+                    className="w-full justify-between"
+                    onClick={() => setActiveCategory(category.name)}
+                  >
+                    <span>{category.name}</span>
+                    <span className="text-xs font-normal">{category.count}</span>
+                  </Button>
+                ))}
+              </div>
+            </Card>
+          </aside>
+
+          <div>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold">All Products <span className="text-base font-normal text-muted-foreground">({products.length} items)</span></h2>
+              <div className="flex items-center gap-2">
+                <Button variant="outline" className="gap-2 bg-background"><Filter className="h-4 w-4" /> Filter</Button>
+                <div className="bg-background p-1 rounded-md border flex">
+                  <Button variant={viewMode === 'grid' ? 'secondary' : 'ghost'} size="icon" onClick={() => setViewMode('grid')} className="h-8 w-8">
+                    <LayoutGrid className="h-4 w-4" />
+                  </Button>
+                   <Button variant={viewMode === 'list' ? 'secondary' : 'ghost'} size="icon" onClick={() => setViewMode('list')} className="h-8 w-8">
+                    <List className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            <div className={cn(
+              "grid gap-6",
+              viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 xl:grid-cols-3' : 'grid-cols-1'
+            )}>
+              {products.map(product => (
+                <Card key={product.id} className={cn(
+                  "overflow-hidden shadow-md hover:shadow-xl transition-shadow flex flex-col group",
+                  product.type === 'dark' ? 'bg-card text-card-foreground' : 'bg-background'
+                )}>
+                  <CardHeader className="p-0 relative">
+                      {product.featured && <Badge className="absolute top-3 left-3 z-10">Featured</Badge>}
+                      <div className="absolute top-3 right-3 z-10 flex gap-2">
+                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-background/50 hover:bg-background/80 text-foreground"><Heart className="h-4 w-4" /></Button>
+                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-background/50 hover:bg-background/80 text-foreground"><ShoppingCart className="h-4 w-4" /></Button>
+                      </div>
+                      <Image 
+                        src={product.image}
+                        width={600} 
+                        height={400} 
+                        alt={product.title} 
+                        data-ai-hint={product.imageHint}
+                        className="w-full aspect-video object-cover"
+                      />
+                  </CardHeader>
+                  <CardContent className="p-4 flex-grow flex flex-col">
+                      <h3 className="font-bold text-lg">{product.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-2">by {product.vendor}</p>
+                      <div className="flex items-center gap-1 text-sm mt-auto pt-2">
+                        <Star className="h-4 w-4 text-primary fill-primary" />
+                        <span className="font-bold">{product.rating.toFixed(1)}</span>
+                        <span className="text-muted-foreground">({product.reviews})</span>
+                      </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

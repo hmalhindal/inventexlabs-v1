@@ -56,22 +56,8 @@ export default function OurPartnersPage() {
           ))}
         </div>
         
-        <div className="mt-12 grid md:grid-cols-2 gap-8">
-            <Card className="w-full shadow-lg bg-primary/10">
-                <CardHeader className="text-center">
-                    <CardTitle className="font-headline text-2xl text-primary flex items-center justify-center gap-2"><Store /> Join Our Vendor Marketplace</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                    <p className="text-lg text-muted-foreground mb-4">
-                        Are you a fabricator, designer, or manufacturer? Join our marketplace to sell your products and services to a wider audience.
-                    </p>
-                    <Link href="/marketplace" className="text-primary font-semibold hover:underline text-lg">
-                    Explore the Marketplace &rarr;
-                    </Link>
-                </CardContent>
-            </Card>
-
-            <Card className="w-full shadow-lg bg-primary/10">
+        <div className="mt-12 grid grid-cols-1 gap-8">
+            <Card className="w-full max-w-2xl mx-auto shadow-lg bg-primary/10">
                 <CardHeader className="text-center">
                     <CardTitle className="font-headline text-2xl text-primary flex items-center justify-center gap-2"><Zap /> Become a Partner</CardTitle>
                 </CardHeader>
