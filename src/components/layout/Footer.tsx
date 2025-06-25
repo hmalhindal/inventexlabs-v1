@@ -9,6 +9,9 @@ const footerLinkGroups = [
     links: [
       { href: '/about-us', text: 'About Us' },
       { href: '/our-platform', text: 'Our Platform' },
+      { href: '/contact-us', text: 'Contact Us' },
+      { href: '/events', text: 'Events' },
+      { href: '/faq', text: 'FAQ' },
     ],
   },
   {
@@ -48,9 +51,6 @@ const footerLinkGroups = [
       { href: '/our-partners', text: 'Our Partners' },
       { href: '/terms-conditions', text: 'Terms & Privacy' },
       { href: '/delivery-information', text: 'Delivery Information' },
-      { href: '/contact-us', text: 'Contact Us' },
-      { href: '/events', text: 'Events' },
-      { href: '/faq', text: 'FAQ' },
     ],
   },
 ];
