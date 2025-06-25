@@ -17,7 +17,7 @@ import {
   RotateCcw,
   Grid3x3,
   Calculator,
-  MousePointerSquare,
+  MousePointer,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -32,7 +32,7 @@ const materials = [
 ];
 
 const tools = [
-  { id: 'select', name: 'Select', icon: MousePointerSquare },
+  { id: 'select', name: 'Select', icon: MousePointer },
   { id: 'rectangle', name: 'Rectangle', icon: RectangleHorizontal },
   { id: 'circle', name: 'Circle', icon: Circle },
   { id: 'text', name: 'Text', icon: Type },
