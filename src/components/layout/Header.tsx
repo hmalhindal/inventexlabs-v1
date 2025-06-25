@@ -31,6 +31,7 @@ import {
   Printer, // Digital Printing
   Cpu, // Machinery
   LayoutGrid, // All Services
+  User, // My Account
 } from 'lucide-react';
 import * as SignIcons from '@/components/icons/SignIcons';
 import * as ProductIcons from '@/components/icons/ProductIcons';
@@ -66,12 +67,14 @@ const productMenuItems = [
   { href: '/products/acrylic', label: 'Acrylic Products', icon: ProductIcons.AcrylicProductsIcon },
   { href: '/products/boxes', label: 'Boxes', icon: ProductIcons.BoxesIcon },
   { href: '/products/gifts', label: 'Gifts', icon: ProductIcons.GiftsIcon },
+  { href: '/products/occasional', label: 'Occasional', icon: ProductIcons.OccasionsIcon },
   { href: '/products/backdrops', label: 'Backdrops', icon: ProductIcons.BackdropsIcon },
 ];
 
 const ctaButtons = [
   { href: '/online-design-tool', label: 'Design Tool', icon: Edit3, variant: 'default' as const },
   { href: '/store', label: 'Online Store', icon: ShoppingCart, variant: 'default' as const },
+  { href: '/my-account', label: 'My Account', icon: User, variant: 'ghost' as const }
 ];
 
 function SignsMegaMenu() {
