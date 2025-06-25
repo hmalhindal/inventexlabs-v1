@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Printer, Star, Truck, Type, Flag, Megaphone, GalleryVertical, Layers } from 'lucide-react';
+import { Printer, Star, Truck, Type, Flag, Megaphone, GalleryVertical, Layers, Store, Presentation, ShoppingCart } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ export default function DigitalPrintingPage() {
     {
       title: 'Tradeshow & Event',
       description: 'Get ready for your next event with our print products. Posters, banners, graphics and more!',
-      gridClass: 'grid grid-cols-1 md:grid-cols-2 gap-6',
+      gridClass: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6',
       products: [
         {
           icon: Flag,
@@ -52,6 +52,21 @@ export default function DigitalPrintingPage() {
           icon: Megaphone,
           title: 'Event Signage',
           description: 'Trade show displays, Event Signage, Touchpoints, Point of Sales, Concessions, Wall Mounted Displays, Backlit Displays, Outdoor Signage and much, much more.',
+        },
+        {
+            icon: Store,
+            title: 'Booths',
+            description: 'Custom-designed booths and backdrops to make your exhibit stand out from the crowd.',
+        },
+        {
+            icon: Presentation,
+            title: 'Pop Up Displays',
+            description: 'Portable and easy-to-assemble pop-up displays and banners for maximum impact with minimal setup.',
+        },
+        {
+            icon: ShoppingCart,
+            title: 'Trolley Carts',
+            description: 'Branded trolley carts for product display or transportation at events, fully customizable.',
         },
       ]
     },
