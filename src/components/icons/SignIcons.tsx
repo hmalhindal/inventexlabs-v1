@@ -158,9 +158,7 @@ export const ConcreteLettersIcon = ({ className }: IconProps) => (
 export const TheGoodsLondonLogo = ({ className }: IconProps) => (
   <div className={className}>
     <div className="text-center font-headline border-2 border-current p-2">
-      <div className="text-lg font-bold">THE GOODS</div>
-      <div className="text-xs tracking-widest">LONDON</div>
-      <div className="text-sm font-semibold mt-1 bg-current text-background">ONLINE SIGN SHOP</div>
+      <div className="text-lg font-bold">signs</div>
     </div>
   </div>
 );
