@@ -48,7 +48,6 @@ const footerLinkGroups = [
       { href: '/our-partners', text: 'Our Partners' },
       { href: '/terms-conditions', text: 'Terms & Privacy' },
       { href: '/delivery-information', text: 'Delivery Information' },
-      { href: '/events', text: 'Events' },
       { href: '/faq', text: 'FAQ' },
     ],
   },
