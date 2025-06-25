@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -23,7 +22,6 @@ import {
   Settings, // Services
   Layers,   // Materials
   Flag,     // Signs & Banners
-  Mail,     // Contact Us
   Edit3,    // Online Design Tool
   ShoppingCart, // Online Store
   ChevronDown, // Dropdown indicator
@@ -98,11 +96,10 @@ const navLinks = [
     isMegaMenu: true 
   },
   { href: '/marketplace', label: 'Marketplace', icon: Users },
-  { href: '/contact-us', label: 'Contact Us', icon: Mail },
 ];
 
 const ctaButtons = [
-  { href: '/online-design-tool', label: 'Online Design Tool', icon: Edit3, variant: 'default' as const },
+  { href: '/online-design-tool', label: 'Design Tool', icon: Edit3, variant: 'default' as const },
   { href: '/store', label: 'Online Store', icon: ShoppingCart, variant: 'default' as const },
 ];
 
