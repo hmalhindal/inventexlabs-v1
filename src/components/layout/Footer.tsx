@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Instagram, Facebook } from 'lucide-react'; // Removed Linkedin, Twitter
+import { Instagram, Facebook, Phone, MapPin } from 'lucide-react';
 import { InventexLogo } from '../icons/InventexLogo';
 
 const footerLinkGroups = [
@@ -9,9 +9,8 @@ const footerLinkGroups = [
     links: [
       { href: '/about-us', text: 'About Us' },
       { href: '/our-platform', text: 'Our Platform' },
-      { href: '/contact-us', text: 'Contact Us' },
-      { href: '/events', text: 'Events' },
-      { href: '/faq', text: 'FAQ' },
+      { href: '/resources/company-profile', text: 'Company Profile' },
+      { href: '/resources/brand-guidelines', text: 'Brand Guidelines' },
     ],
   },
   {
@@ -40,8 +39,6 @@ const footerLinkGroups = [
       { href: '/resources/design-guide', text: 'Design Guide' },
       { href: '/resources/swatch-catalog', text: 'Swatch Catalog' },
       { href: '/resources/product-catalog', text: 'Product Catalog' },
-      { href: '/resources/company-profile', text: 'Company Profile' },
-      { href: '/resources/brand-guidelines', text: 'Brand Guidelines' },
     ],
   },
   {
@@ -51,6 +48,8 @@ const footerLinkGroups = [
       { href: '/our-partners', text: 'Our Partners' },
       { href: '/terms-conditions', text: 'Terms & Privacy' },
       { href: '/delivery-information', text: 'Delivery Information' },
+      { href: '/events', text: 'Events' },
+      { href: '/faq', text: 'FAQ' },
     ],
   },
 ];
@@ -80,9 +79,9 @@ export function Footer() {
     <footer className="bg-card border-t border-border mt-auto text-card-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-10">
-          {/* Social Icons - first column on large screens, spans on mobile */}
-          <div className="col-span-2 sm:col-span-1 lg:col-span-1 flex flex-col items-start space-y-4">
-            <Link href="/" className="mb-2">
+          {/* Social Icons & Contact Info */}
+          <div className="col-span-2 lg:col-span-2 flex flex-col items-start">
+            <Link href="/" className="mb-4">
               <InventexLogo width={150} height={40} />
             </Link>
             <div className="flex space-x-3">
@@ -93,6 +92,19 @@ export function Footer() {
                   <social.icon className="h-5 w-5" />
                 </Link>
               ))}
+            </div>
+            <div className="pt-6 space-y-3 text-sm text-muted-foreground">
+              <a href="tel:+96565886831" className="flex items-center gap-2 hover:text-primary hover:underline">
+                <Phone className="h-4 w-4 text-primary shrink-0" />
+                <span>+965 65886831</span>
+              </a>
+              <div className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                <div>
+                  St 3, Fahaheel industrial Area<br />
+                  Kuwait
+                </div>
+              </div>
             </div>
           </div>
 
