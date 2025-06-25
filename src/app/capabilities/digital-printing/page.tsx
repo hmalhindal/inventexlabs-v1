@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Printer, Star, Truck, Type, Banner, Megaphone, GalleryVertical, Layers } from 'lucide-react';
+import { Printer, Star, Truck, Type, Flag, Megaphone, GalleryVertical, Layers } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ export default function DigitalPrintingPage() {
       gridClass: 'grid grid-cols-1 md:grid-cols-2 gap-6',
       products: [
         {
-          icon: Banner,
+          icon: Flag,
           title: 'Display Banners',
           description: 'We produce full color digitally printed banners of all types. Use it for outdoor advertising, POS for business, promote your band, large event signage. A million different uses!',
         },
