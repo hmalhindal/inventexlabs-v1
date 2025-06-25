@@ -32,6 +32,33 @@ import {
   Users, // Marketplace
   LayoutGrid, // All Services
 } from 'lucide-react';
+import * as SignIcons from '@/components/icons/SignIcons';
+
+const signMenuItems = [
+  { href: '/capabilities/signs-and-banners/all', label: 'All Signs', icon: SignIcons.AllSignsIcon },
+  { href: '/capabilities/signs-and-banners/menu-boards', label: 'Menu Boards', icon: SignIcons.MenuBoardsIcon },
+  { href: '/capabilities/signs-and-banners/giant-letters', label: 'Giant Letters', icon: SignIcons.GiantLettersIcon },
+  { href: '/capabilities/signs-and-banners/moss-letters', label: 'Moss Letters', icon: SignIcons.MossLettersIcon },
+  { href: '/capabilities/signs-and-banners/a-boards', label: 'A Boards', icon: SignIcons.ABoardIcon },
+  { href: '/capabilities/signs-and-banners/light-letters', label: 'Light Letters', icon: SignIcons.LightLettersIcon },
+  { href: '/capabilities/signs-and-banners/acrylic-light-letters', label: 'Acrylic Light Letters', icon: SignIcons.AcrylicLightLettersIcon },
+  { href: '/capabilities/signs-and-banners/homeware', label: 'Homeware & Deskware', icon: SignIcons.HomewareDeskwareIcon },
+  { href: '/capabilities/signs-and-banners/light-boxes', label: 'Light Boxes', icon: SignIcons.LightBoxesIcon },
+  { href: '/capabilities/signs-and-banners/led-neon-signs', label: 'LED Neon Signs', icon: SignIcons.LedNeonSignsIcon },
+  { href: '/capabilities/signs-and-banners/infinity-mirrors', label: 'Infinity Mirrors', icon: SignIcons.InfinityMirrorsIcon },
+  { href: '/capabilities/signs-and-banners/merchandise', label: 'G&G Merchandise', icon: SignIcons.GgMerchandiseIcon },
+  { href: '/capabilities/signs-and-banners/cinema-light-boxes', label: 'Cinema Light Boxes', icon: SignIcons.CinemaLightBoxesIcon },
+  { href: '/capabilities/signs-and-banners/projecting-signs', label: 'Projecting & Swing Signs', icon: SignIcons.ProjectingSignsIcon },
+  { href: '/capabilities/signs-and-banners/house-numbers', label: 'House Numbers', icon: SignIcons.HouseNumbersIcon },
+  { href: '/capabilities/signs-and-banners/printed-signs', label: 'Printed Signs', icon: SignIcons.PrintedSignsIcon },
+  { href: '/capabilities/signs-and-banners/menu-cases', label: 'Menu Cases', icon: SignIcons.MenuCasesIcon },
+  { href: '/capabilities/signs-and-banners/sale', label: 'Sale', icon: SignIcons.SaleIcon },
+  { href: '/capabilities/signs-and-banners/eco-signs', label: 'Eco Signs', icon: SignIcons.EcoSignsIcon },
+  { href: '/capabilities/signs-and-banners/concrete-letters', label: 'Concrete Letters', icon: SignIcons.ConcreteLettersIcon },
+  { href: '/capabilities/signs-and-banners/giant-outdoor-arrows', label: 'Giant Outdoor Arrows', icon: SignIcons.GiantOutdoorArrowsIcon },
+  { href: '/capabilities/signs-and-banners/artworking-hours', label: 'Artworking Hours', icon: SignIcons.ArtworkingHoursIcon },
+];
+
 
 const navLinks = [
   { href: '/', label: 'Home', icon: Home },
@@ -42,7 +69,7 @@ const navLinks = [
     dropdown: true,
     items: [
       { href: '/services', label: 'All Services', icon: LayoutGrid },
-      { type: 'separator' },
+      { type: 'separator' as const },
       { href: '/capabilities/cnc-machining', label: 'CNC Machining', icon: Cog },
       { href: '/capabilities/laser-cutting', label: 'Laser Cutting', icon: Zap },
       { href: '/capabilities/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
@@ -63,7 +90,11 @@ const navLinks = [
       { href: '/materials/styrofoam', label: 'Styrofoam', icon: Layers },
     ]
   },
-  { href: '/capabilities/signs-and-banners', label: 'Signs & Banners', icon: Flag },
+  { 
+    label: 'Signs & Banners', 
+    icon: Flag, 
+    isMegaMenu: true 
+  },
   { href: '/marketplace', label: 'Marketplace', icon: Users },
   { href: '/contact-us', label: 'Contact Us', icon: Mail },
 ];
@@ -72,6 +103,31 @@ const ctaButtons = [
   { href: '/online-design-tool', label: 'Online Design Tool', icon: Edit3, variant: 'default' as const },
   { href: '/store', label: 'Online Store', icon: ShoppingCart, variant: 'default' as const },
 ];
+
+function SignsMegaMenu() {
+  return (
+    <DropdownMenuContent 
+      align="start" 
+      className="w-[90vw] max-w-6xl p-6 bg-background/95 backdrop-blur-sm"
+      onMouseLeave={(e) => (e.currentTarget as HTMLElement).blur()}
+    >
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
+        {signMenuItems.map((item) => (
+          <DropdownMenuItem key={item.label} asChild className="p-0">
+            <Link href={item.href} className="flex items-center gap-3 p-2 rounded-md hover:bg-accent focus:bg-accent focus:outline-none">
+              <item.icon className="h-8 w-8 text-primary shrink-0" />
+              <span className="font-medium text-foreground whitespace-nowrap">{item.label}</span>
+            </Link>
+          </DropdownMenuItem>
+        ))}
+        <div className="col-start-3 md:col-start-4 row-start-6 flex items-end justify-end">
+           <SignIcons.TheGoodsLondonLogo className="w-40" />
+        </div>
+      </div>
+    </DropdownMenuContent>
+  );
+}
+
 
 export function Header() {
   return (
@@ -86,43 +142,66 @@ export function Header() {
           </Link>
           
           <nav className="flex items-center gap-1 md:gap-2 flex-wrap justify-end">
-            {navLinks.map((link) => 
-              link.dropdown ? (
-                <DropdownMenu key={link.label}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className="text-muted-foreground hover:text-primary px-2 md:px-3">
-                          <link.icon className="h-5 w-5 md:mr-1" />
-                          <span className="hidden md:inline">{link.label}</span>
-                          <ChevronDown className="h-4 w-4 ml-1 hidden md:inline" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom" className="md:hidden">
-                      <p>{link.label}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                  <DropdownMenuContent align="start">
-                    {link.items?.map((item, index) => {
-                      if ('type' in item && item.type === 'separator') {
-                        return <DropdownMenuSeparator key={`sep-${index}`} />;
-                      }
-                      if ('href' in item) {
-                        return (
-                          <DropdownMenuItem key={item.href} asChild>
-                            <Link href={item.href} className="flex items-center gap-2 w-full">
-                              <item.icon className="h-4 w-4 text-muted-foreground" />
-                              {item.label}
-                            </Link>
-                          </DropdownMenuItem>
-                        );
-                      }
-                      return null;
-                    })}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
+            {navLinks.map((link) => {
+              if (link.isMegaMenu) {
+                 return (
+                  <DropdownMenu key={link.label}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="ghost" className="text-muted-foreground hover:text-primary px-2 md:px-3">
+                            <link.icon className="h-5 w-5 md:mr-1" />
+                            <span className="hidden md:inline">{link.label}</span>
+                          </Button>
+                        </DropdownMenuTrigger>
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom" className="md:hidden">
+                        <p>{link.label}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                    <SignsMegaMenu />
+                  </DropdownMenu>
+                 )
+              }
+              if (link.dropdown) {
+                return (
+                  <DropdownMenu key={link.label}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="ghost" className="text-muted-foreground hover:text-primary px-2 md:px-3">
+                            <link.icon className="h-5 w-5 md:mr-1" />
+                            <span className="hidden md:inline">{link.label}</span>
+                            <ChevronDown className="h-4 w-4 ml-1 hidden md:inline" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom" className="md:hidden">
+                        <p>{link.label}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                    <DropdownMenuContent align="start">
+                      {link.items?.map((item, index) => {
+                        if (item.type === 'separator') {
+                          return <DropdownMenuSeparator key={`sep-${index}`} />;
+                        }
+                        if ('href' in item) {
+                          return (
+                            <DropdownMenuItem key={item.href} asChild>
+                              <Link href={item.href} className="flex items-center gap-2 w-full">
+                                {item.icon && <item.icon className="h-4 w-4 text-muted-foreground" />}
+                                {item.label}
+                              </Link>
+                            </DropdownMenuItem>
+                          );
+                        }
+                        return null;
+                      })}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                )
+              }
+              return (
                 <Tooltip key={link.label}>
                   <TooltipTrigger asChild>
                     <Button asChild variant="ghost" className="text-muted-foreground hover:text-primary px-2 md:px-3">
@@ -137,7 +216,7 @@ export function Header() {
                   </TooltipContent>
                 </Tooltip>
               )
-            )}
+            })}
             
             <div className="flex items-center gap-1 md:gap-2 ml-2 md:ml-4">
               {ctaButtons.map((button) => (
