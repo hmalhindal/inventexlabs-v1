@@ -4,7 +4,8 @@ import { Footer } from '@/components/layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Handshake, Building, Zap } from 'lucide-react';
+import { Handshake, Building, Zap, Store } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Our Partners - Inventex Labs',
@@ -55,19 +56,35 @@ export default function OurPartnersPage() {
           ))}
         </div>
         
-        <Card className="w-full max-w-4xl mx-auto shadow-lg mt-12 bg-primary/10">
-          <CardHeader className="text-center">
-             <CardTitle className="font-headline text-2xl text-primary flex items-center justify-center gap-2"><Zap /> Become a Partner</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center">
-            <p className="text-lg text-muted-foreground mb-4">
-              Interested in collaborating with Inventex Labs? We are always open to exploring new partnerships that can enhance our platform and benefit our customers.
-            </p>
-            <Link href="/contact-us?subject=PartnershipInquiry" className="text-primary font-semibold hover:underline text-lg">
-              Contact Us to Discuss Opportunities &rarr;
-            </Link>
-          </CardContent>
-        </Card>
+        <div className="mt-12 grid md:grid-cols-2 gap-8">
+            <Card className="w-full shadow-lg bg-primary/10">
+                <CardHeader className="text-center">
+                    <CardTitle className="font-headline text-2xl text-primary flex items-center justify-center gap-2"><Store /> Join Our Vendor Marketplace</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                    <p className="text-lg text-muted-foreground mb-4">
+                        Are you a fabricator, designer, or manufacturer? Join our marketplace to sell your products and services to a wider audience.
+                    </p>
+                    <Link href="/marketplace" className="text-primary font-semibold hover:underline text-lg">
+                    Explore the Marketplace &rarr;
+                    </Link>
+                </CardContent>
+            </Card>
+
+            <Card className="w-full shadow-lg bg-primary/10">
+                <CardHeader className="text-center">
+                    <CardTitle className="font-headline text-2xl text-primary flex items-center justify-center gap-2"><Zap /> Become a Partner</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                    <p className="text-lg text-muted-foreground mb-4">
+                    Interested in collaborating with Inventex Labs? We are always open to exploring new partnerships that can enhance our platform.
+                    </p>
+                    <Link href="/contact-us?subject=PartnershipInquiry" className="text-primary font-semibold hover:underline text-lg">
+                    Contact Us for Opportunities &rarr;
+                    </Link>
+                </CardContent>
+            </Card>
+        </div>
 
       </main>
       <Footer />

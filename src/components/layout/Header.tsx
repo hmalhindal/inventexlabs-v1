@@ -27,7 +27,8 @@ import {
   Zap, // Laser Cutting
   Cog, // CNC Machining
   LayoutPanelLeft, // Sheet Metal
-  Printer // Digital Printing
+  Printer, // Digital Printing
+  Users, // Marketplace
 } from 'lucide-react';
 
 const navLinks = [
@@ -41,7 +42,7 @@ const navLinks = [
       { href: '/capabilities/cnc-machining', label: 'CNC Machining', icon: Cog },
       { href: '/capabilities/laser-cutting', label: 'Laser Cutting', icon: Zap },
       { href: '/capabilities/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
-      { href: '/capabilities/digital-printing', label: 'Digital Printing', icon: Printer }, // Added
+      { href: '/capabilities/digital-printing', label: 'Digital Printing', icon: Printer },
     ]
   },
   { 
@@ -51,7 +52,7 @@ const navLinks = [
     items: [
       { href: '/materials/cnc-machining', label: 'CNC Materials', icon: Cog },
       { href: '/materials/laser-cutting', label: 'Laser Materials', icon: Zap },
-      { href: '/materials/sheet-metal', label: 'Sheet Metal Materials', icon: LayoutPanelLeft },
+      { href: '/materials/sheet-metal', label: 'Sheet Metal', icon: LayoutPanelLeft },
       { href: '/materials/acrylic', label: 'Acrylic', icon: Layers },
       { href: '/materials/wood', label: 'Wood', icon: Layers },
       { href: '/materials/aluminum', label: 'Aluminum', icon: Layers },
@@ -59,6 +60,7 @@ const navLinks = [
     ]
   },
   { href: '/capabilities/signs-and-banners', label: 'Signs & Banners', icon: Flag },
+  { href: '/marketplace', label: 'Marketplace', icon: Users },
   { href: '/contact-us', label: 'Contact Us', icon: Mail },
 ];
 
