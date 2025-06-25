@@ -69,6 +69,8 @@ const productMenuItems = [
   { href: '/products/gifts', label: 'Gifts', icon: ProductIcons.GiftsIcon },
   { href: '/products/occasional', label: 'Occasional', icon: ProductIcons.OccasionsIcon },
   { href: '/products/backdrops', label: 'Backdrops', icon: ProductIcons.BackdropsIcon },
+  { href: '/products/booths', label: 'Booths', icon: ProductIcons.BoothsIcon },
+  { href: '/products/trolley-carts', label: 'Trolley Carts', icon: ProductIcons.TrolleyCartsIcon },
 ];
 
 const ctaButtons = [
@@ -104,14 +106,14 @@ function ProductsMegaMenu() {
   return (
     <DropdownMenuContent 
       align="start" 
-      className="max-w-xs p-6 bg-background/95 backdrop-blur-sm"
+      className="max-w-md p-6 bg-background/95 backdrop-blur-sm"
     >
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {productMenuItems.map((item) => (
           <DropdownMenuItem key={item.label} asChild className="p-0">
             <Link href={item.href} className="flex flex-col items-center justify-center gap-2 p-3 rounded-md hover:bg-accent focus:bg-accent focus:outline-none">
               <item.icon className="h-10 w-10 text-primary shrink-0" />
-              <span className="font-medium text-foreground text-center">{item.label}</span>
+              <span className="font-medium text-foreground text-center text-xs">{item.label}</span>
             </Link>
           </DropdownMenuItem>
         ))}
