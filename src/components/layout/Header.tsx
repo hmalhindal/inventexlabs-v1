@@ -132,15 +132,36 @@ export function Header() {
   return (
     <header className="bg-card border-b border-border shadow-sm sticky top-0 z-50">
       <TooltipProvider delayDuration={100}>
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <InventexLogo className="h-10 w-auto text-primary group-hover:opacity-80 transition-opacity" />
-            <h1 className="font-headline text-2xl font-bold text-primary hidden sm:block whitespace-nowrap">
-              مصنع انفنتكس
-            </h1>
-          </Link>
+        <div className="container mx-auto px-4 py-2">
+          {/* Top Row */}
+          <div className="flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-2 group shrink-0">
+              <InventexLogo className="h-10 w-auto text-primary group-hover:opacity-80 transition-opacity" />
+              <h1 className="font-headline text-2xl font-bold text-primary hidden sm:block whitespace-nowrap">
+                مصنع انفنتكس
+              </h1>
+            </Link>
+            <div className="flex items-center gap-1 md:gap-2">
+              {ctaButtons.map((button) => (
+                 <Tooltip key={button.label}>
+                    <TooltipTrigger asChild>
+                      <Button asChild variant={button.variant} size="sm" className="px-2 md:px-3">
+                        <Link href={button.href} aria-label={button.label}>
+                          <button.icon className="h-5 w-5 md:mr-1" />
+                          <span className="hidden md:inline">{button.label}</span>
+                        </Link>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="md:hidden">
+                      <p>{button.label}</p>
+                    </TooltipContent>
+                  </Tooltip>
+              ))}
+            </div>
+          </div>
           
-          <nav className="flex items-center gap-1 md:gap-2 flex-wrap justify-end">
+          {/* Bottom Row - Main Navigation */}
+          <nav className="flex items-center justify-center gap-1 md:gap-2 flex-wrap border-t border-border mt-2 pt-2">
             {navLinks.map((link) => {
               if (link.isMegaMenu) {
                  return (
@@ -216,24 +237,6 @@ export function Header() {
                 </Tooltip>
               )
             })}
-            
-            <div className="flex items-center gap-1 md:gap-2 ml-2 md:ml-4">
-              {ctaButtons.map((button) => (
-                 <Tooltip key={button.label}>
-                    <TooltipTrigger asChild>
-                      <Button asChild variant={button.variant} size="sm" className="px-2 md:px-3">
-                        <Link href={button.href} aria-label={button.label}>
-                          <button.icon className="h-5 w-5 md:mr-1" />
-                          <span className="hidden md:inline">{button.label}</span>
-                        </Link>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom" className="md:hidden">
-                      <p>{button.label}</p>
-                    </TooltipContent>
-                  </Tooltip>
-              ))}
-            </div>
           </nav>
         </div>
       </TooltipProvider>
