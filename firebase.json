@@ -1,0 +1,13 @@
+{
+  "apphosting": {
+    "backendId": "inventexlabsbackend",
+    "rootDir": "/home/user/studio",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "functions"
+    ]
+  }
+}

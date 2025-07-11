@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -37,40 +38,40 @@ import * as SignIcons from '@/components/icons/SignIcons';
 import * as ProductIcons from '@/components/icons/ProductIcons';
 
 const signMenuItems = [
-  { href: '/capabilities/signs-and-banners/all', label: 'All Signs', icon: SignIcons.AllSignsIcon },
-  { href: '/capabilities/signs-and-banners/menu-boards', label: 'Menu Boards', icon: SignIcons.MenuBoardsIcon },
-  { href: '/capabilities/signs-and-banners/giant-letters', label: 'Giant Letters', icon: SignIcons.GiantLettersIcon },
-  { href: '/capabilities/signs-and-banners/moss-letters', label: 'Moss Letters', icon: SignIcons.MossLettersIcon },
-  { href: '/capabilities/signs-and-banners/a-boards', label: 'A Boards', icon: SignIcons.ABoardIcon },
-  { href: '/capabilities/signs-and-banners/light-letters', label: 'Light Letters', icon: SignIcons.LightLettersIcon },
-  { href: '/capabilities/signs-and-banners/acrylic-light-letters', label: 'Acrylic Light Letters', icon: SignIcons.AcrylicLightLettersIcon },
-  { href: '/capabilities/signs-and-banners/homeware', label: 'Homeware & Deskware', icon: SignIcons.HomewareDeskwareIcon },
-  { href: '/capabilities/signs-and-banners/light-boxes', label: 'Light Boxes', icon: SignIcons.LightBoxesIcon },
-  { href: '/capabilities/signs-and-banners/led-neon-signs', label: 'LED Neon Signs', icon: SignIcons.LedNeonSignsIcon },
-  { href: '/capabilities/signs-and-banners/infinity-mirrors', label: 'Infinity Mirrors', icon: SignIcons.InfinityMirrorsIcon },
-  { href: '/capabilities/signs-and-banners/merchandise', label: 'G&G Merchandise', icon: SignIcons.GgMerchandiseIcon },
-  { href: '/capabilities/signs-and-banners/cinema-light-boxes', label: 'Cinema Light Boxes', icon: SignIcons.CinemaLightBoxesIcon },
-  { href: '/capabilities/signs-and-banners/projecting-signs', label: 'Projecting & Swing Signs', icon: SignIcons.ProjectingSignsIcon },
-  { href: '/capabilities/signs-and-banners/house-numbers', label: 'House Numbers', icon: SignIcons.HouseNumbersIcon },
-  { href: '/capabilities/signs-and-banners/printed-signs', label: 'Printed Signs', icon: SignIcons.PrintedSignsIcon },
-  { href: '/capabilities/signs-and-banners/menu-cases', label: 'Menu Cases', icon: SignIcons.MenuCasesIcon },
-  { href: '/capabilities/signs-and-banners/sale', label: 'Sale', icon: SignIcons.SaleIcon },
-  { href: '/capabilities/signs-and-banners/eco-signs', label: 'Eco Signs', icon: SignIcons.EcoSignsIcon },
-  { href: '/capabilities/signs-and-banners/concrete-letters', label: 'Concrete Letters', icon: SignIcons.ConcreteLettersIcon },
-  { href: '/capabilities/signs-and-banners/giant-outdoor-arrows', label: 'Giant Outdoor Arrows', icon: SignIcons.GiantOutdoorArrowsIcon },
-  { href: '/capabilities/signs-and-banners/artworking-hours', label: 'Artworking Hours', icon: SignIcons.ArtworkingHoursIcon },
+  { href: '/capabilities/signs-and-banners/all', label: 'All Signs', icon: 'AllSignsIcon' },
+  { href: '/capabilities/signs-and-banners/menu-boards', label: 'Menu Boards', icon: 'MenuBoardsIcon' },
+  { href: '/capabilities/signs-and-banners/giant-letters', label: 'Giant Letters', icon: 'GiantLettersIcon' },
+  { href: '/capabilities/signs-and-banners/moss-letters', label: 'Moss Letters', icon: 'MossLettersIcon' },
+  { href: '/capabilities/signs-and-banners/a-boards', label: 'A Boards', icon: 'ABoardIcon' },
+  { href: '/capabilities/signs-and-banners/light-letters', label: 'Light Letters', icon: 'LightLettersIcon' },
+  { href: '/capabilities/signs-and-banners/acrylic-light-letters', label: 'Acrylic Light Letters', icon: 'AcrylicLightLettersIcon' },
+  { href: '/capabilities/signs-and-banners/homeware', label: 'Homeware & Deskware', icon: 'HomewareDeskwareIcon' },
+  { href: '/capabilities/signs-and-banners/light-boxes', label: 'Light Boxes', icon: 'LightBoxesIcon' },
+  { href: '/capabilities/signs-and-banners/led-neon-signs', label: 'LED Neon Signs', icon: 'LedNeonSignsIcon' },
+  { href: '/capabilities/signs-and-banners/infinity-mirrors', label: 'Infinity Mirrors', icon: 'InfinityMirrorsIcon' },
+  { href: '/capabilities/signs-and-banners/merchandise', label: 'G&G Merchandise', icon: 'GgMerchandiseIcon' },
+  { href: '/capabilities/signs-and-banners/cinema-light-boxes', label: 'Cinema Light Boxes', icon: 'CinemaLightBoxesIcon' },
+  { href: '/capabilities/signs-and-banners/projecting-signs', label: 'Projecting & Swing Signs', icon: 'ProjectingSignsIcon' },
+  { href: '/capabilities/signs-and-banners/house-numbers', label: 'House Numbers', icon: 'HouseNumbersIcon' },
+  { href: '/capabilities/signs-and-banners/printed-signs', label: 'Printed Signs', icon: 'PrintedSignsIcon' },
+  { href: '/capabilities/signs-and-banners/menu-cases', label: 'Menu Cases', icon: 'MenuCasesIcon' },
+  { href: '/capabilities/signs-and-banners/sale', label: 'Sale', icon: 'SaleIcon' },
+  { href: '/capabilities/signs-and-banners/eco-signs', label: 'Eco Signs', icon: 'EcoSignsIcon' },
+  { href: '/capabilities/signs-and-banners/concrete-letters', label: 'Concrete Letters', icon: 'ConcreteLettersIcon' },
+  { href: '/capabilities/signs-and-banners/giant-outdoor-arrows', label: 'Giant Outdoor Arrows', icon: 'GiantOutdoorArrowsIcon' },
+  { href: '/capabilities/signs-and-banners/artworking-hours', label: 'Artworking Hours', icon: 'ArtworkingHoursIcon' },
 ];
 
 const productMenuItems = [
-  { href: '/products/all', label: 'All Products', icon: ProductIcons.AllProductsIcon },
-  { href: '/products/home-decor', label: 'Home Decor', icon: ProductIcons.HomeDecorIcon },
-  { href: '/products/acrylic', label: 'Acrylic Products', icon: ProductIcons.AcrylicProductsIcon },
-  { href: '/products/boxes', label: 'Boxes', icon: ProductIcons.BoxesIcon },
-  { href: '/products/gifts', label: 'Gifts', icon: ProductIcons.GiftsIcon },
-  { href: '/products/occasional', label: 'Occasional', icon: ProductIcons.OccasionsIcon },
-  { href: '/products/backdrops', label: 'Backdrops', icon: ProductIcons.BackdropsIcon },
-  { href: '/products/booths', label: 'Booths', icon: ProductIcons.BoothsIcon },
-  { href: '/products/trolley-carts', label: 'Trolley Carts', icon: ProductIcons.TrolleyCartsIcon },
+  { href: '/products/all', label: 'All Products', icon: 'AllProductsIcon' },
+  { href: '/products/home-decor', label: 'Home Decor', icon: 'HomeDecorIcon' },
+  { href: '/products/acrylic', label: 'Acrylic Products', icon: 'AcrylicProductsIcon' },
+  { href: '/products/boxes', label: 'Boxes', icon: 'BoxesIcon' },
+  { href: '/products/gifts', label: 'Gifts', icon: 'GiftsIcon' },
+  { href: '/products/occasional', label: 'Occasional', icon: 'OccasionsIcon' },
+  { href: '/products/backdrops', label: 'Backdrops', icon: 'BackdropsIcon' },
+  { href: '/products/booths', label: 'Booths', icon: 'BoothsIcon' },
+  { href: '/products/trolley-carts', label: 'Trolley Carts', icon: 'TrolleyCartsIcon' },
 ];
 
 const ctaButtons = [
@@ -79,6 +80,12 @@ const ctaButtons = [
   { href: '/my-account', label: 'My Account', icon: User, variant: 'ghost' as const }
 ];
 
+const iconMap = {
+  ...SignIcons,
+  ...ProductIcons,
+};
+
+
 function SignsMegaMenu() {
   return (
     <DropdownMenuContent 
@@ -86,14 +93,17 @@ function SignsMegaMenu() {
       className="w-[90vw] max-w-6xl p-6 bg-background/95 backdrop-blur-sm"
     >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
-        {signMenuItems.map((item) => (
-          <DropdownMenuItem key={item.label} asChild className="p-0">
-            <Link href={item.href} className="flex items-center gap-3 p-2 rounded-md hover:bg-accent focus:bg-accent focus:outline-none">
-              <item.icon className="h-8 w-8 text-primary shrink-0" />
-              <span className="font-medium text-foreground whitespace-nowrap">{item.label}</span>
-            </Link>
-          </DropdownMenuItem>
-        ))}
+        {signMenuItems.map((item) => {
+          const IconComponent = iconMap[item.icon as keyof typeof iconMap];
+          return (
+            <DropdownMenuItem key={item.label} asChild className="p-0">
+              <Link href={item.href} className="flex items-center gap-3 p-2 rounded-md hover:bg-accent focus:bg-accent focus:outline-none">
+                <IconComponent className="h-8 w-8 text-primary shrink-0" />
+                <span className="font-medium text-foreground whitespace-nowrap">{item.label}</span>
+              </Link>
+            </DropdownMenuItem>
+          )
+        })}
         <div className="col-start-3 md:col-start-4 row-start-6 flex items-end justify-end">
            <SignIcons.TheGoodsLondonLogo className="w-40" />
         </div>
@@ -109,14 +119,17 @@ function ProductsMegaMenu() {
       className="max-w-md p-6 bg-background/95 backdrop-blur-sm"
     >
       <div className="grid grid-cols-3 gap-4">
-        {productMenuItems.map((item) => (
-          <DropdownMenuItem key={item.label} asChild className="p-0">
-            <Link href={item.href} className="flex flex-col items-center justify-center gap-2 p-3 rounded-md hover:bg-accent focus:bg-accent focus:outline-none">
-              <item.icon className="h-10 w-10 text-primary shrink-0" />
-              <span className="font-medium text-foreground text-center text-xs">{item.label}</span>
-            </Link>
-          </DropdownMenuItem>
-        ))}
+        {productMenuItems.map((item) => {
+          const IconComponent = iconMap[item.icon as keyof typeof iconMap];
+          return (
+            <DropdownMenuItem key={item.label} asChild className="p-0">
+              <Link href={item.href} className="flex flex-col items-center justify-center gap-2 p-3 rounded-md hover:bg-accent focus:bg-accent focus:outline-none">
+                <IconComponent className="h-10 w-10 text-primary shrink-0" />
+                <span className="font-medium text-foreground text-center text-xs">{item.label}</span>
+              </Link>
+            </DropdownMenuItem>
+          )
+        })}
       </div>
     </DropdownMenuContent>
   );
