@@ -53,24 +53,24 @@
   }
 
   .dark {
-    --background: 220 10% 10%; /* Very Dark Grey/Almost Black */
-    --foreground: 0 0% 98%; /* Almost White */
+    --background: 0 0% 100%; /* Changed to white */
+    --foreground: 220 10% 10%; /* Changed to dark text for contrast */
     --card: 220 10% 18%; /* Darker Grey for default cards (header/footer) */
     --card-foreground: 0 0% 98%; /* Almost White */
     --popover: 220 10% 15%; /* Dark Popover */
     --popover-foreground: 0 0% 98%; /* Almost White */
     --primary: 45 90% 55%; /* Vibrant Yellow */
     --primary-foreground: 220 20% 10%; /* Very Dark Grey for text on yellow */
-    --secondary: 220 10% 25%; /* Medium Dark Grey */
-    --secondary-foreground: 0 0% 90%; /* Light Grey */
-    --muted: 220 10% 20%; /* Another Dark Grey */
-    --muted-foreground: 220 10% 60%; /* Medium Grey for muted text */
+    --secondary: 220 10% 96%; /* Light grey for secondary elements on white bg */
+    --secondary-foreground: 220 10% 20%; /* Dark text for secondary elements */
+    --muted: 220 10% 96%; /* Light grey for muted elements */
+    --muted-foreground: 220 10% 45%; /* Medium grey for muted text */
     --accent: 50 95% 60%; /* A slightly different Yellow */
     --accent-foreground: 220 20% 10%; /* Dark Grey for text on accent */
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 10% 30%; /* Darker Border */
-    --input: 220 10% 22%; /* Dark Input Background */
+    --border: 220 10% 85%; /* Lighter border for white bg */
+    --input: 220 10% 90%; /* Light grey for input background */
     --ring: 45 90% 55%; /* Vibrant Yellow for rings */
     --chart-1: 45 80% 60%;
     --chart-2: 35 80% 60%;
