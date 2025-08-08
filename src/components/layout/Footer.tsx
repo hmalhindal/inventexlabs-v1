@@ -38,6 +38,7 @@ const footerLinkGroups = [
       { href: '/resources/design-guide', text: 'Design Guide' },
       { href: '/resources/swatch-catalog', text: 'Swatch Catalog' },
       { href: '/resources/product-catalog', text: 'Product Catalog' },
+      { href: '/downloads-faq', text: 'Downloads & FAQ' },
     ],
   },
   {
