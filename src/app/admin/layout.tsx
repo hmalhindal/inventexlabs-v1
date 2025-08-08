@@ -1,21 +1,23 @@
+
 import React from 'react';
 
 interface AdminLayoutProps {
   children: React.ReactNode;
 }
 
-const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
+export default function AdminLayout({ children }: AdminLayoutProps) {
   return (
-    <div className="admin-layout">
-      <header className="admin-header">
-        <h1>Admin Dashboard</h1>
-        {/* Add navigation or other header elements here */}
-      </header>
-      <main className="admin-content">
-        {children}
-      </main>
-    </div>
+    <html>
+      <body>
+        <div className="admin-layout">
+          <header className="admin-header p-4 bg-card text-card-foreground border-b">
+            <h1 className="text-xl font-bold">Admin Dashboard</h1>
+          </header>
+          <main className="admin-content p-4">
+            {children}
+          </main>
+        </div>
+      </body>
+    </html>
   );
 };
-
-export default AdminLayout;

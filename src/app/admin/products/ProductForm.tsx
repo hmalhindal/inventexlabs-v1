@@ -1,6 +1,10 @@
+
 'use client';
 
 import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 interface ProductFormProps {
   initialData?: {
@@ -16,19 +20,17 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData, onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Basic validation (can be expanded)
     if (name.trim() === '' || price.trim() === '') {
-      alert('Please fill in all fields');
+      // Basic validation, can be improved with a form library
       return;
     }
     const priceNumber = parseFloat(price);
     if (isNaN(priceNumber)) {
-      alert('Price must be a valid number');
       return;
     }
 
     onSubmit({ name, price: priceNumber });
-    // Optionally clear the form after submission if adding
+
     if (!initialData) {
       setName('');
       setPrice('');
@@ -36,38 +38,36 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData, onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="productName" className="block text-sm font-medium text-gray-700">
-          Product Name
-        </label>
-        <input
-          type="text"
+    <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+      <div className="grid grid-cols-4 items-center gap-4">
+        <Label htmlFor="productName" className="text-right">
+          Name
+        </Label>
+        <Input
           id="productName"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="col-span-3"
+          placeholder="e.g. Aluminum Sheet"
         />
       </div>
-      <div>
-        <label htmlFor="productPrice" className="block text-sm font-medium text-gray-700">
+      <div className="grid grid-cols-4 items-center gap-4">
+        <Label htmlFor="productPrice" className="text-right">
           Price
-        </label>
-        <input
-          type="number"
+        </Label>
+        <Input
           id="productPrice"
+          type="number"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="col-span-3"
+          placeholder="e.g. 45.50"
           step="0.01"
         />
       </div>
-      <button
-        type="submit"
-        className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-      >
-        {initialData ? 'Update Product' : 'Add Product'}
-      </button>
+       <Button type="submit" className="mt-4">
+          {initialData ? 'Update Product' : 'Save Product'}
+        </Button>
     </form>
   );
 };
