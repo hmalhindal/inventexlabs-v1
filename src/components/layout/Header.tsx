@@ -23,7 +23,7 @@ import {
   Settings, // Services
   Layers,   // Materials
   Flag,     // Signs & Banners
-  Edit3,    // Online Design Tool
+  PenTool,    // Online Design Tool
   ShoppingCart, // Online Store
   ChevronDown, // Dropdown indicator
   Zap, // Laser Cutting
@@ -75,7 +75,7 @@ const productMenuItems = [
 ];
 
 const ctaButtons = [
-  { href: '/online-design-tool', label: 'Design Tool', icon: Edit3, variant: 'default' as const },
+  { href: '/online-design-tool', label: 'Design Tool', icon: PenTool, variant: 'default' as const },
   { href: '/store', label: 'Online Store', icon: ShoppingCart, variant: 'default' as const },
   { href: '/my-account', label: 'My Account', icon: User, variant: 'ghost' as const }
 ];
@@ -83,6 +83,8 @@ const ctaButtons = [
 const iconMap = {
   ...SignIcons,
   ...ProductIcons,
+  BoothsIcon: ProductIcons.BoothsIcon,
+  TrolleyCartsIcon: ProductIcons.TrolleyCartsIcon,
 };
 
 
