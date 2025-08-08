@@ -18,7 +18,6 @@ const footerLinkGroups = [
     links: [
       { href: '/capabilities/cnc-machining', text: 'CNC Machining' },
       { href: '/capabilities/laser-cutting', text: 'Laser Cutting' },
-      { href: '/capabilities/sheet-metal', text: 'Sheet Metal' },
       { href: '/capabilities/signs-and-banners', text: 'Signs & Banners' },
       { href: '/capabilities/digital-printing', text: 'Digital Printing' },
     ],
