@@ -20,15 +20,36 @@ import {
   MousePointer,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
-// Mock data based on the image
-const materials = [
-  { name: 'Acrylic 3mm', price: '0.05 KWD/cm²', color: 'bg-blue-200/50' },
-  { name: 'Acrylic 5mm', price: '0.08 KWD/cm²', color: 'bg-blue-300/50' },
-  { name: 'Wood 3mm', price: '0.04 KWD/cm²', color: 'bg-amber-200/50' },
-  { name: 'Wood 6mm', price: '0.07 KWD/cm²', color: 'bg-amber-300/50' },
-  { name: 'Metal 1mm', price: '0.12 KWD/cm²', color: 'bg-gray-300/50' },
-  { name: 'Cardboard 2mm', price: '0.02 KWD/cm²', color: 'bg-orange-200/50' },
+const materialCategories = [
+  {
+    title: 'Cool Metals',
+    items: [
+      { name: 'Nickle', price: '0.15 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'nickle metal' },
+      { name: 'Silver', price: '0.18 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'silver metal' },
+      { name: 'Stainless Steel', price: '0.14 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'stainless steel' },
+      { name: 'Chrome', price: '0.16 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'chrome metal' },
+      { name: 'Aluminum', price: '0.12 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'aluminum metal' },
+    ]
+  },
+  {
+    title: 'Warm Metals',
+    items: [
+      { name: 'Gold', price: '0.25 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'gold metal' },
+      { name: 'Brass', price: '0.17 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'brass metal' },
+      { name: 'Antique Brass', price: '0.19 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'antique brass' },
+      { name: 'Copper', price: '0.20 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'copper metal' },
+    ]
+  },
+  {
+    title: 'Dark Metals',
+    items: [
+      { name: 'Cast Iron', price: '0.10 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'cast iron' },
+      { name: 'Flat Black', price: '0.11 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'flat black metal' },
+      { name: 'Matte Black', price: '0.11 KWD/cm²', imageUrl: 'https://placehold.co/100x100.png', imageHint: 'matte black metal' },
+    ]
+  }
 ];
 
 const tools = [
@@ -40,9 +61,19 @@ const tools = [
 
 export default function OnlineDesignToolPage() {
   const [selectedTool, setSelectedTool] = useState('select');
-  const [selectedMaterial, setSelectedMaterial] = useState('Acrylic 3mm');
+  const [selectedMaterial, setSelectedMaterial] = useState('Nickle');
   const [canvasWidth, setCanvasWidth] = useState(200);
   const [canvasHeight, setCanvasHeight] = useState(200);
+
+  const getSelectedMaterialPrice = () => {
+    for (const category of materialCategories) {
+      const material = category.items.find(item => item.name === selectedMaterial);
+      if (material) {
+        return material.price;
+      }
+    }
+    return 'N/A';
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-secondary/30 text-foreground">
@@ -75,24 +106,36 @@ export default function OnlineDesignToolPage() {
               <CardHeader>
                 <CardTitle className="text-lg">Materials</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
-                {materials.map((material) => (
-                  <button
-                    key={material.name}
-                    className={cn(
-                      'w-full text-left p-3 border rounded-lg flex items-center gap-3 transition-colors',
-                      selectedMaterial === material.name
-                        ? 'border-primary ring-2 ring-primary/50 bg-primary/10'
-                        : 'border-border hover:bg-accent'
-                    )}
-                    onClick={() => setSelectedMaterial(material.name)}
-                  >
-                    <div className={cn('h-8 w-8 rounded border', material.color)}></div>
-                    <div>
-                      <p className="font-semibold">{material.name}</p>
-                      <p className="text-xs text-muted-foreground">{material.price}</p>
+              <CardContent className="space-y-4">
+                {materialCategories.map((category) => (
+                  <div key={category.title}>
+                    <h3 className="font-semibold text-muted-foreground mb-2">{category.title}</h3>
+                    <div className="grid grid-cols-4 gap-2">
+                      {category.items.map((material) => (
+                        <button
+                          key={material.name}
+                          className={cn(
+                            'w-full text-center p-1 border rounded-lg flex flex-col items-center gap-1 transition-colors',
+                            selectedMaterial === material.name
+                              ? 'border-primary ring-2 ring-primary/50 bg-primary/10'
+                              : 'border-border hover:bg-accent'
+                          )}
+                          onClick={() => setSelectedMaterial(material.name)}
+                          title={`${material.name} - ${material.price}`}
+                        >
+                          <Image 
+                            src={material.imageUrl} 
+                            alt={material.name} 
+                            width={40} 
+                            height={40} 
+                            className="rounded-md"
+                            data-ai-hint={material.imageHint}
+                          />
+                           <p className="text-xs font-medium text-foreground truncate">{material.name}</p>
+                        </button>
+                      ))}
                     </div>
-                  </button>
+                  </div>
                 ))}
               </CardContent>
             </Card>
@@ -160,7 +203,7 @@ export default function OnlineDesignToolPage() {
               <CardContent className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Material:</span>
-                  <span className="font-medium">Acrylic 3mm</span>
+                  <span className="font-medium">{selectedMaterial}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Area:</span>
