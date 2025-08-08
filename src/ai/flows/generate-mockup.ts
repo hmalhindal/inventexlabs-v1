@@ -4,32 +4,10 @@
  * @fileOverview An AI flow for generating 3D mockups of designs.
  *
  * - generateMockup - Generates a mockup image based on a user's design and a text prompt.
- * - GenerateMockupInput - Input type for the generateMockup flow.
- * - GenerateMockupOutput - Output type for the generateMockup flow.
  */
 
 import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
-
-export const GenerateMockupInputSchema = z.object({
-  designDataUri: z
-    .string()
-    .describe(
-      "The user's design (e.g., logo, sign) as a data URI. Expected format: 'data:<mimetype>;base64,<encoded_data>'."
-    ),
-  prompt: z
-    .string()
-    .describe(
-      'A text prompt describing the desired scene for the mockup (e.g., "a sign on a modern storefront").'
-    ),
-});
-export type GenerateMockupInput = z.infer<typeof GenerateMockupInputSchema>;
-
-export const GenerateMockupOutputSchema = z.object({
-  imageDataUri: z.string().describe('The generated mockup image as a data URI.'),
-});
-export type GenerateMockupOutput = z.infer<typeof GenerateMockupOutputSchema>;
-
+import { GenerateMockupInputSchema, GenerateMockupOutputSchema, type GenerateMockupInput, type GenerateMockupOutput } from './generate-mockup-schema';
 
 const mockupGeneratorFlow = ai.defineFlow(
   {

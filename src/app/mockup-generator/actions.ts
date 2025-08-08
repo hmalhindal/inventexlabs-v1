@@ -1,20 +1,17 @@
 
 'use server';
 
-import { generateMockup, GenerateMockupInput, GenerateMockupOutput } from '@/ai/flows/generate-mockup';
+import { generateMockup } from '@/ai/flows/generate-mockup';
+import type { GenerateMockupInput, GenerateMockupOutput } from '@/ai/flows/generate-mockup-schema';
 
-interface GenerateMockupActionInput {
-  designDataUri: string;
-  prompt: string;
-}
 
-export async function generateMockupAction(input: GenerateMockupActionInput): Promise<{ data?: GenerateMockupOutput; error?: string }> {
+export async function generateMockupAction(input: GenerateMockupInput): Promise<{ data?: GenerateMockupOutput; error?: string }> {
   try {
     if (!input.designDataUri || !input.prompt) {
       return { error: 'Invalid input provided. Design and prompt are required.' };
     }
     
-    const result = await generateMockup(input as GenerateMockupInput);
+    const result = await generateMockup(input);
     return { data: result };
 
   } catch (e) {
