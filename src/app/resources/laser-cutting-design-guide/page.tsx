@@ -58,14 +58,13 @@ export default function LaserCuttingDesignGuidePage() {
             <p>Different materials react differently to laser cutting. Reflective materials (like polished aluminum or copper) can be challenging. Some plastics may produce harmful fumes or melt excessively. See our <Link href="/materials/laser-cutting">Laser Cutting Materials page</Link> for more details.</p>
 
             <h2>File Formats and Preparation</h2>
-            <p>We typically accept 2D vector files like DXF, DWG, AI, or SVG. Ensure your design:
-              <ul className="list-disc list-inside">
-                <li>Uses closed paths for all cut lines.</li>
-                <li>Has no overlapping lines or duplicate entities.</li>
-                <li>Is scaled to the correct dimensions (1:1 scale is preferred).</li>
-                <li>Clearly differentiates between cutting lines, engraving lines, and scoring lines if applicable (e.g., by using different colors or layers).</li>
-              </ul>
-            </p>
+            <p>We typically accept 2D vector files like DXF, DWG, AI, or SVG. Ensure your design:</p>
+            <ul className="list-disc list-inside">
+              <li>Uses closed paths for all cut lines.</li>
+              <li>Has no overlapping lines or duplicate entities.</li>
+              <li>Is scaled to the correct dimensions (1:1 scale is preferred).</li>
+              <li>Clearly differentiates between cutting lines, engraving lines, and scoring lines if applicable (e.g., by using different colors or layers).</li>
+            </ul>
 
             <p className="pt-4">
               By following these design guidelines, you can improve the quality and manufacturability of your laser-cut parts. Our platform may also provide DFM feedback on your uploaded designs.
@@ -77,4 +76,3 @@ export default function LaserCuttingDesignGuidePage() {
     </div>
   );
 }
-
