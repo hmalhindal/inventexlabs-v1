@@ -75,16 +75,14 @@ const productMenuItems = [
 ];
 
 const ctaButtons = [
-  { href: '/online-design-tool', label: 'Design Tool', icon: PenTool, variant: 'default' as const },
-  { href: '/store', label: 'Online Store', icon: ShoppingCart, variant: 'default' as const },
-  { href: '/my-account', label: 'My Account', icon: User, variant: 'ghost' as const }
+  { id: 'design-tool', href: '/online-design-tool', label: 'Design Tool', icon: PenTool, variant: 'default' as const },
+  { id: 'store', href: '/store', label: 'Online Store', icon: ShoppingCart, variant: 'default' as const },
+  { id: 'account', href: '/my-account', label: 'My Account', icon: User, variant: 'ghost' as const }
 ];
 
 const iconMap = {
   ...SignIcons,
   ...ProductIcons,
-  BoothsIcon: ProductIcons.BoothsIcon,
-  TrolleyCartsIcon: ProductIcons.TrolleyCartsIcon,
 };
 
 
@@ -193,21 +191,24 @@ export function Header() {
               </h1>
             </Link>
             <div className="flex items-center gap-1 md:gap-2">
-              {ctaButtons.map((button) => (
+              {ctaButtons.map((button) => {
+                const isIconOnly = button.id === 'design-tool';
+                return (
                  <Tooltip key={button.label}>
                     <TooltipTrigger asChild>
-                      <Button asChild variant={button.variant} size="sm" className="px-2 md:px-3">
+                      <Button asChild variant={button.variant} size={isIconOnly ? 'icon' : 'sm'} className={!isIconOnly ? "px-2 md:px-3" : ""}>
                         <Link href={button.href} aria-label={button.label}>
-                          <button.icon className="h-5 w-5 md:mr-1" />
-                          <span className="hidden md:inline">{button.label}</span>
+                          <button.icon className="h-5 w-5" />
+                          {!isIconOnly && <span className="hidden md:inline">{button.label}</span>}
                         </Link>
                       </Button>
                     </TooltipTrigger>
-                    <TooltipContent side="bottom" className="md:hidden">
+                    <TooltipContent side="bottom">
                       <p>{button.label}</p>
                     </TooltipContent>
                   </Tooltip>
-              ))}
+                );
+              })}
             </div>
           </div>
           
