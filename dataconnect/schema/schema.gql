@@ -1,53 +1,57 @@
 type User @table {
   displayName: String!
-  email: String
+  email: String!
+  createdAt: Timestamp!
   photoUrl: String
-  createdAt: Timestamp!
-  lastLoginAt: Timestamp
+  billingAddress: String
+  shippingAddress: String
 }
 
-type DesignProject @table {
+type Project @table {
+  user: User!
   name: String!
+  createdAt: Timestamp!
   description: String
-  thumbnailUrl: String
   isPublic: Boolean
-  tags: [String]
-  designData: String!
-  createdAt: Timestamp!
-  updatedAt: Timestamp!
-  user: User
 }
 
-type Template @table {
-  name: String!
-  description: String
-  thumbnailUrl: String
-  category: String
-  templateData: String!
+type Design @table {
+  project: Project!
+  fileName: String!
+  fileUrl: String!
+  materialType: String!
+  materialThickness: Float!
   createdAt: Timestamp!
+  dimensions: String
+  notes: String
+  estimatedCost: Float
+  quantity: Int
+}
+
+type Order @table {
+  user: User!
+  orderNumber: String!
+  orderDate: Timestamp!
+  totalAmount: Float!
+  status: String!
+  shippingTrackingNumber: String
+  shippingDate: Timestamp
+  deliveryDate: Timestamp
+}
+
+type OrderItem @table {
+  order: Order!
+  designSnapshot: String!
+  quantity: Int!
+  unitPrice: Float!
+  itemNotes: String
 }
 
 type Material @table {
   name: String!
-  materialType: String!
+  type: String!
   thicknessOptions: [Float]
-  defaultCutSettings: String
-}
-
-type CuttingMachineProfile @table {
-  machineName: String!
-  machineType: String!
+  costPerSqInch: Float!
   description: String
-  maxCutAreaWidth: Float
-  maxCutAreaHeight: Float
-  supportedFileFormats: [String]
-  user: User
-}
-
-type VersionHistory @table {
-  versionNumber: Int!
-  savedAt: Timestamp!
-  versionData: String!
-  notes: String
-  designProject: DesignProject
+  properties: String
 }

@@ -1,5 +1,5 @@
 specVersion: "v1"
-serviceId: "inventx"
+serviceId: "invntx"
 location: "me-west1"
 schema:
   source: "./schema"
@@ -7,6 +7,6 @@ schema:
     postgresql:
       database: "fdcdb"
       cloudSql:
-        instanceId: "inventx-fdc"
+        instanceId: "invntx-fdc"
       # schemaValidation: "COMPATIBLE"
 connectorDirs: ["./connector"]

@@ -188,9 +188,9 @@ export function Header() {
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 group shrink-0">
               <InventexLogo className="h-10 w-auto text-primary group-hover:opacity-80 transition-opacity" />
-              <h1 className="font-headline text-2xl font-bold text-primary hidden sm:block whitespace-nowrap">
+              <span className="font-headline text-2xl font-bold text-primary hidden sm:block whitespace-nowrap">
                 مصنع انفنتكس
-              </h1>
+              </span>
             </Link>
             <div className="flex items-center gap-1 md:gap-2">
               {ctaButtons.map((button) => {
