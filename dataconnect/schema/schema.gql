@@ -1,0 +1,53 @@
+type User @table {
+  displayName: String!
+  email: String
+  photoUrl: String
+  createdAt: Timestamp!
+  lastLoginAt: Timestamp
+}
+
+type DesignProject @table {
+  name: String!
+  description: String
+  thumbnailUrl: String
+  isPublic: Boolean
+  tags: [String]
+  designData: String!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+  user: User
+}
+
+type Template @table {
+  name: String!
+  description: String
+  thumbnailUrl: String
+  category: String
+  templateData: String!
+  createdAt: Timestamp!
+}
+
+type Material @table {
+  name: String!
+  materialType: String!
+  thicknessOptions: [Float]
+  defaultCutSettings: String
+}
+
+type CuttingMachineProfile @table {
+  machineName: String!
+  machineType: String!
+  description: String
+  maxCutAreaWidth: Float
+  maxCutAreaHeight: Float
+  supportedFileFormats: [String]
+  user: User
+}
+
+type VersionHistory @table {
+  versionNumber: Int!
+  savedAt: Timestamp!
+  versionData: String!
+  notes: String
+  designProject: DesignProject
+}
