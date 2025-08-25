@@ -50,7 +50,6 @@ const signMenuItems = [
   { href: '/capabilities/signs-and-banners/light-boxes', label: 'Light Boxes', icon: 'LightBoxesIcon' },
   { href: '/capabilities/signs-and-banners/led-neon-signs', label: 'LED Neon Signs', icon: 'LedNeonSignsIcon' },
   { href: '/capabilities/signs-and-banners/infinity-mirrors', label: 'Infinity Mirrors', icon: 'InfinityMirrorsIcon' },
-  { href: '/capabilities/signs-and-banners/merchandise', label: 'G&G Merchandise', icon: 'GgMerchandiseIcon' },
   { href: '/capabilities/signs-and-banners/cinema-light-boxes', label: 'Cinema Light Boxes', icon: 'CinemaLightBoxesIcon' },
   { href: '/capabilities/signs-and-banners/projecting-signs', label: 'Projecting & Swing Signs', icon: 'ProjectingSignsIcon' },
   { href: '/capabilities/signs-and-banners/house-numbers', label: 'House Numbers', icon: 'HouseNumbersIcon' },
