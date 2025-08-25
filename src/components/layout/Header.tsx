@@ -60,7 +60,6 @@ const signMenuItems = [
   { href: '/capabilities/signs-and-banners/eco-signs', label: 'Eco Signs', icon: 'EcoSignsIcon' },
   { href: '/capabilities/signs-and-banners/concrete-letters', label: 'Concrete Letters', icon: 'ConcreteLettersIcon' },
   { href: '/capabilities/signs-and-banners/giant-outdoor-arrows', label: 'Giant Outdoor Arrows', icon: 'GiantOutdoorArrowsIcon' },
-  { href: '/capabilities/signs-and-banners/artworking-hours', label: 'Artworking Hours', icon: 'ArtworkingHoursIcon' },
 ];
 
 const productMenuItems = [
