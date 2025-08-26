@@ -44,14 +44,6 @@ export default function AcrylicMaterialPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 text-lg">
-            <Image 
-              src="https://placehold.co/800x300.png" 
-              alt="Samples of acrylic sheets in various colors and thicknesses" 
-              width={800} 
-              height={300} 
-              className="rounded-lg mb-6"
-              data-ai-hint="acrylic sheets color"
-            />
             <p>
               Acrylic, also known as Polymethyl Methacrylate (PMMA), is a transparent thermoplastic widely used as a lightweight and shatter-resistant alternative to glass. It's known for its excellent optical clarity, weather resistance, and ease of fabrication, making it a popular choice for a multitude of applications.
             </p>
