@@ -9,7 +9,18 @@ import { QuoteForm } from '@/components/quote/QuoteForm';
 import { QuotationDisplay } from '@/components/quote/QuotationDisplay';
 import { OrderPlacementModal } from '@/components/order/OrderPlacementModal';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Zap, Cog, Layers, Truck, FileText, Bot, Compass } from 'lucide-react';
+import { CheckCircle, Zap, Cog, Layers, Truck, FileText, Bot, Compass, ShoppingCart, Home, Gift, Briefcase, Box, GalleryHorizontal, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import Image from 'next/image';
+
+const storeCategories = [
+    { title: 'Home Decor', icon: Home },
+    { title: 'Business Signs', icon: Briefcase },
+    { title: 'Personalized Gifts', icon: Gift },
+    { title: 'Custom Boxes', icon: Box },
+    { title: 'Event Props', icon: GalleryHorizontal },
+];
 
 const additionalServices = [
     {
@@ -105,6 +116,46 @@ export default function HomePage() {
             />
           </div>
         </div>
+
+        <section className="mb-10 md:mb-16">
+            <Card className="w-full bg-card text-card-foreground shadow-xl overflow-hidden">
+                <div className="grid md:grid-cols-2 items-center">
+                    <div className="p-8 md:p-12">
+                        <h2 className="font-headline text-3xl sm:text-4xl font-bold text-primary mb-4">
+                            Explore Our Online Store
+                        </h2>
+                        <p className="text-lg text-muted-foreground mb-6">
+                            Discover a curated collection of laser-cut products, ready to be customized for your home, business, or special occasions.
+                        </p>
+                        <div className="space-y-3 mb-8">
+                           {storeCategories.map(category => (
+                             <div key={category.title} className="flex items-center gap-3 p-3 bg-background/10 rounded-md">
+                                <category.icon className="h-5 w-5 text-primary"/>
+                                <span className="font-medium text-foreground">{category.title}</span>
+                             </div>
+                           ))}
+                        </div>
+                        <Button asChild size="lg">
+                            <Link href="/store">
+                                <ShoppingCart className="mr-2 h-5 w-5" />
+                                Shop All Products
+                                <ChevronRight className="ml-2 h-5 w-5" />
+                            </Link>
+                        </Button>
+                    </div>
+                    <div className="hidden md:block h-full">
+                        <Image
+                            src="https://placehold.co/600x800.png"
+                            alt="Promotional image for online store"
+                            width={600}
+                            height={800}
+                            className="object-cover w-full h-full"
+                            data-ai-hint="product showcase"
+                        />
+                    </div>
+                </div>
+            </Card>
+        </section>
         
         <section className="mb-10 md:mb-16">
             <div className="text-center mb-12">
