@@ -55,18 +55,6 @@ export default function AcrylicMaterialPage() {
             <p>
               Acrylic, also known as Polymethyl Methacrylate (PMMA), is a transparent thermoplastic widely used as a lightweight and shatter-resistant alternative to glass. It's known for its excellent optical clarity, weather resistance, and ease of fabrication, making it a popular choice for a multitude of applications.
             </p>
-            
-            <h2 className="font-headline text-2xl text-primary pt-2">Key Properties of Acrylic:</h2>
-            <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-              <li><span className="font-semibold text-foreground">Optical Clarity:</span> High light transmission, often clearer than glass.</li>
-              <li><span className="font-semibold text-foreground">Lightweight:</span> Approximately half the weight of glass.</li>
-              <li><span className="font-semibold text-foreground">Impact Resistance:</span> Significantly more impact resistant than glass, though not as strong as polycarbonate.</li>
-              <li><span className="font-semibold text-foreground">Weather Resistance:</span> Excellent resistance to UV light and weathering, making it suitable for outdoor use.</li>
-              <li><span className="font-semibold text-foreground">Versatility:</span> Available in a wide range of colors, opacities, and finishes (e.g., frosted, mirrored).</li>
-              <li><span className="font-semibold text-foreground">Ease of Fabrication:</span> Easily laser cut, engraved, bent, glued, and polished.</li>
-            </ul>
-
-            <div className="border-t border-border my-6"></div>
 
             <h2 className="font-headline text-2xl text-primary pt-2">Available Acrylic Colors & Finishes</h2>
             <p className="text-muted-foreground">Below is a selection of our standard acrylic colors and finishes. We can source other colors upon request.</p>
@@ -82,6 +70,18 @@ export default function AcrylicMaterialPage() {
                     </div>
                 ))}
             </div>
+
+            <div className="border-t border-border my-6"></div>
+            
+            <h2 className="font-headline text-2xl text-primary pt-2">Key Properties of Acrylic:</h2>
+            <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+              <li><span className="font-semibold text-foreground">Optical Clarity:</span> High light transmission, often clearer than glass.</li>
+              <li><span className="font-semibold text-foreground">Lightweight:</span> Approximately half the weight of glass.</li>
+              <li><span className="font-semibold text-foreground">Impact Resistance:</span> Significantly more impact resistant than glass, though not as strong as polycarbonate.</li>
+              <li><span className="font-semibold text-foreground">Weather Resistance:</span> Excellent resistance to UV light and weathering, making it suitable for outdoor use.</li>
+              <li><span className="font-semibold text-foreground">Versatility:</span> Available in a wide range of colors, opacities, and finishes (e.g., frosted, mirrored).</li>
+              <li><span className="font-semibold text-foreground">Ease of Fabrication:</span> Easily laser cut, engraved, bent, glued, and polished.</li>
+            </ul>
 
             <div className="border-t border-border my-6"></div>
 
