@@ -7,11 +7,28 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Layers } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Acrylic Material - Inventex Labs',
   description: 'Explore acrylic (PMMA) as a versatile material for laser cutting, fabrication, and signage at Inventex Labs.',
 };
+
+const acrylicColors = [
+    { name: 'Clear', style: { background: 'repeating-conic-gradient(#808080 0% 25%, transparent 0% 50%) 50% / 10px 10px' }, border: true },
+    { name: 'White', style: { backgroundColor: '#FFFFFF' }, border: true },
+    { name: 'Black', style: { backgroundColor: '#000000' } },
+    { name: 'Red', style: { backgroundColor: '#B71C1C' } },
+    { name: 'Blue', style: { backgroundColor: '#1976D2' } },
+    { name: 'Green', style: { backgroundColor: '#2E7D32' } },
+    { name: 'Yellow', style: { backgroundColor: '#FBC02D' } },
+    { name: 'Orange', style: { backgroundColor: '#E65100' } },
+    { name: 'Frosted', style: { backgroundColor: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(4px)' }, border: true },
+    { name: 'Mirror', style: { background: 'linear-gradient(45deg, #B0B0B0, #E0E0E0, #B0B0B0)' } },
+    { name: 'Fluo Pink', style: { backgroundColor: '#FF4081', boxShadow: '0 0 5px #FF4081, 0 0 10px #FF4081' } },
+    { name: 'Fluo Green', style: { backgroundColor: '#69F0AE', boxShadow: '0 0 5px #69F0AE, 0 0 10px #69F0AE' } },
+];
+
 
 export default function AcrylicMaterialPage() {
   return (
@@ -48,6 +65,26 @@ export default function AcrylicMaterialPage() {
               <li><span className="font-semibold text-foreground">Versatility:</span> Available in a wide range of colors, opacities, and finishes (e.g., frosted, mirrored).</li>
               <li><span className="font-semibold text-foreground">Ease of Fabrication:</span> Easily laser cut, engraved, bent, glued, and polished.</li>
             </ul>
+
+            <div className="border-t border-border my-6"></div>
+
+            <h2 className="font-headline text-2xl text-primary pt-2">Available Acrylic Colors & Finishes</h2>
+            <p className="text-muted-foreground">Below is a selection of our standard acrylic colors and finishes. We can source other colors upon request.</p>
+            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4">
+                {acrylicColors.map((swatch) => (
+                    <div key={swatch.name} className="flex flex-col items-center gap-2">
+                        <div 
+                            className={cn("h-16 w-16 rounded-lg shadow-md", swatch.border && "border border-muted")}
+                            style={swatch.style}
+                            title={swatch.name}
+                        ></div>
+                        <p className="text-sm font-medium text-center">{swatch.name}</p>
+                    </div>
+                ))}
+            </div>
+
+            <div className="border-t border-border my-6"></div>
+
 
             <h2 className="font-headline text-2xl text-primary pt-2">Common Applications:</h2>
             <ul className="list-disc list-inside space-y-1 text-muted-foreground">
