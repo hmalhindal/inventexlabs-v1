@@ -1,15 +1,10 @@
 
 'use client';
 
-import { useState } from 'react';
-import type { EstimateQuotationOutput } from '@/ai/flows/estimate-quotation';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { QuoteForm } from '@/components/quote/QuoteForm';
-import { QuotationDisplay } from '@/components/quote/QuotationDisplay';
-import { OrderPlacementModal } from '@/components/order/OrderPlacementModal';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Zap, Cog, Layers, Truck, FileText, Bot, Compass, ShoppingCart, Home, Gift, Briefcase, Box, GalleryHorizontal, ChevronRight } from 'lucide-react';
+import { CheckCircle, Zap, Cog, Layers, Truck, FileText, Bot, Compass, ShoppingCart, Home, Gift, Briefcase, Box, GalleryHorizontal, ChevronRight, Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -69,10 +64,6 @@ const platformHighlights = [
 
 
 export default function HomePage() {
-  const [quotation, setQuotation] = useState<EstimateQuotationOutput | null>(null);
-  const [isQuoteLoading, setIsQuoteLoading] = useState(false);
-  const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
-
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
@@ -104,18 +95,24 @@ export default function HomePage() {
             </div>
         </section>
 
-        <div className="grid lg:grid-cols-5 gap-8 xl:gap-12 items-start mb-10 md:mb-16">
-          <div className="lg:col-span-3">
-            <QuoteForm setQuotation={setQuotation} setIsLoading={setIsQuoteLoading} />
-          </div>
-          <div className="lg:col-span-2">
-            <QuotationDisplay 
-              quotation={quotation} 
-              isLoading={isQuoteLoading} 
-              onPlaceOrder={() => setIsOrderModalOpen(true)} 
-            />
-          </div>
-        </div>
+        <section className="mb-10 md:mb-16">
+            <Card className="w-full bg-primary/10 shadow-xl overflow-hidden border-2 border-primary/20">
+                 <div className="p-8 md:p-12 text-center">
+                    <h2 className="font-headline text-3xl sm:text-4xl font-bold text-primary mb-4">
+                        Ready to Create?
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+                        Get an instant price for your design. Upload a CAD file to our AI-powered quoting tool and start your manufacturing journey today.
+                    </p>
+                    <Button asChild size="lg" className="text-lg py-7 px-10">
+                        <Link href="/get-a-quote">
+                            <Calculator className="mr-3 h-6 w-6" />
+                            Get an Instant Quote
+                        </Link>
+                    </Button>
+                </div>
+            </Card>
+        </section>
 
         <section className="mb-10 md:mb-16">
             <Card className="w-full bg-card text-card-foreground shadow-xl overflow-hidden">
@@ -188,14 +185,6 @@ export default function HomePage() {
                 ))}
             </div>
         </section>
-
-        {quotation && (
-            <OrderPlacementModal
-            isOpen={isOrderModalOpen}
-            setIsOpen={setIsOrderModalOpen}
-            quotation={quotation}
-            />
-        )}
       </main>
       <Footer />
     </div>
