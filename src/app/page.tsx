@@ -9,7 +9,7 @@ import { QuoteForm } from '@/components/quote/QuoteForm';
 import { QuotationDisplay } from '@/components/quote/QuotationDisplay';
 import { OrderPlacementModal } from '@/components/order/OrderPlacementModal';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle, Zap, Cog, Layers, Truck } from 'lucide-react';
+import { CheckCircle, Zap, Cog, Layers, Truck, FileText, Bot, Compass } from 'lucide-react';
 
 const additionalServices = [
     {
@@ -38,6 +38,24 @@ const additionalServices = [
     },
 ];
 
+const platformHighlights = [
+    {
+        icon: Bot,
+        title: "Instant AI-Powered Quotes",
+        description: "Our AI analyzes your CAD files to provide instant, accurate quotes for various materials and services."
+    },
+    {
+        icon: Compass,
+        title: "Multiple Services",
+        description: "We offer a range of manufacturing services including CNC Machining and Laser Cutting to suit your project needs."
+    },
+    {
+        icon: FileText,
+        title: "Seamless Workflow",
+        description: "From design upload to order placement and tracking, our platform simplifies the entire manufacturing process."
+    }
+];
+
 
 export default function HomePage() {
   const [quotation, setQuotation] = useState<EstimateQuotationOutput | null>(null);
@@ -50,12 +68,30 @@ export default function HomePage() {
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
         <div className="text-center mb-10 md:mb-16">
           <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-3">
-            Get an Instant Quote
+            On-Demand Manufacturing Made Simple
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Upload your CAD design, select materials, and get a real-time quotation for laser cutting or CNC machining.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Inventex Labs provides an intelligent, automated platform for engineers, designers, and businesses to get custom parts manufactured with speed and precision.
           </p>
         </div>
+
+        <section className="mb-10 md:mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {platformHighlights.map((highlight) => (
+                    <div key={highlight.title} className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                                <highlight.icon className="h-6 w-6 text-primary" />
+                            </div>
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold text-foreground mb-1">{highlight.title}</h3>
+                            <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
 
         <div className="grid lg:grid-cols-5 gap-8 xl:gap-12 items-start mb-10 md:mb-16">
           <div className="lg:col-span-3">
