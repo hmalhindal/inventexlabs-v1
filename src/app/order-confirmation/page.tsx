@@ -12,8 +12,15 @@ type SearchParams = {
   error?: string;
 };
 
-export default function OrderConfirmationPage({ searchParams }: { searchParams: SearchParams }) {
-  const { orderId, paymentId, error } = searchParams;
+export default function OrderConfirmationPage({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined }
+}) {
+  const orderId = typeof searchParams?.orderId === 'string' ? searchParams.orderId : undefined;
+  const paymentId = typeof searchParams?.paymentId === 'string' ? searchParams.paymentId : undefined;
+  const error = typeof searchParams?.error === 'string' ? searchParams.error : undefined;
+}
 
   const isSuccess = paymentId && !error;
   const isFailure = !!error;
