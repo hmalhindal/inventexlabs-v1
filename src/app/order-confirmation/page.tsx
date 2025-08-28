@@ -6,31 +6,13 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
-// This is a Server Component, so we can access searchParams directly.
-// src/app/order-confirmation/page.tsx
-
 type SearchParams = {
   orderId?: string;
   paymentId?: string;
   error?: string;
 };
 
-export default function OrderConfirmationPage({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
-  // Your existing page logic goes here.
-  // For example:
-  return (
-    <div>
-      <h1>Order Confirmation</h1>
-      {searchParams.orderId && <p>Order ID: {searchParams.orderId}</p>}
-      {searchParams.paymentId && <p>Payment ID: {searchParams.paymentId}</p>}
-      {searchParams.error && <p style={{color: 'red'}}>Error: {searchParams.error}</p>}
-    </div>
-  );
-}
+export default function OrderConfirmationPage({ searchParams }: { searchParams: SearchParams }) {
   const { orderId, paymentId, error } = searchParams;
 
   const isSuccess = paymentId && !error;
@@ -89,7 +71,6 @@ export default function OrderConfirmationPage({
       </p>
     );
   }
-
 
   return (
     <div className="flex flex-col min-h-screen">
