@@ -36,6 +36,13 @@ const mockupGeneratorFlow = ai.defineFlow(
 );
 
 
+/**
+ * Generates a mockup image based on a user's design and a text prompt.
+ * This function serves as a wrapper around the Genkit flow.
+ *
+ * @param {GenerateMockupInput} input - The input for the mockup generation.
+ * @returns {Promise<GenerateMockupOutput>} A promise that resolves to the generated mockup image data.
+ */
 export async function generateMockup(input: GenerateMockupInput): Promise<GenerateMockupOutput> {
   return mockupGeneratorFlow(input);
 }

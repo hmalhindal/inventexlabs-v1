@@ -19,6 +19,12 @@ interface OrderPlacementModalProps {
 
 const SHIPPING_COST = 5.00; // Example fixed shipping cost
 
+/**
+ * A component that displays a summary of the order, including costs and lead time.
+ * @param {object} props - The component props.
+ * @param {EstimateQuotationOutput} props.quotation - The quotation data.
+ * @returns {JSX.Element} The rendered OrderSummaryCard component.
+ */
 const OrderSummaryCard: React.FC<{ quotation: EstimateQuotationOutput }> = ({ quotation }) => {
   const totalCost = useMemo(() => quotation.estimatedCost + SHIPPING_COST, [quotation.estimatedCost]);
 
@@ -49,6 +55,14 @@ const OrderSummaryCard: React.FC<{ quotation: EstimateQuotationOutput }> = ({ qu
 };
 
 
+/**
+ * A modal dialog for placing an order.
+ * It includes a form for shipping details and an order summary.
+ * On submission, it calls the `placeOrderAction` server action to initiate payment.
+ *
+ * @param {OrderPlacementModalProps} props - The component props.
+ * @returns {JSX.Element | null} The rendered OrderPlacementModal component, or null if there is no quotation.
+ */
 export function OrderPlacementModal({ isOpen, setIsOpen, quotation }: OrderPlacementModalProps) {
   const { toast } = useToast();
   const [isProcessing, setIsProcessing] = useState(false);

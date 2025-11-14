@@ -88,6 +88,11 @@ const iconMap = {
 };
 
 
+/**
+ * Renders the mega menu for "Signs & Banners".
+ * It displays a grid of sign categories with icons.
+ * @returns {JSX.Element} The rendered SignsMegaMenu component.
+ */
 function SignsMegaMenu() {
   return (
     <DropdownMenuContent 
@@ -114,6 +119,11 @@ function SignsMegaMenu() {
   );
 }
 
+/**
+ * Renders the mega menu for "Products".
+ * It displays a grid of product categories with icons.
+ * @returns {JSX.Element} The rendered ProductsMegaMenu component.
+ */
 function ProductsMegaMenu() {
   return (
     <DropdownMenuContent 
@@ -138,6 +148,12 @@ function ProductsMegaMenu() {
 }
 
 
+/**
+ * Renders the main header of the website.
+ * It includes the logo, main navigation, and call-to-action buttons.
+ * The navigation is responsive and uses tooltips for smaller screens.
+ * @returns {JSX.Element} The rendered Header component.
+ */
 export function Header() {
   // Define navLinks inside the component so it can use other components
   const navLinks = [
