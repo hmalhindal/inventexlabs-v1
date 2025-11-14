@@ -20,7 +20,7 @@ export default function OrderConfirmationPage({
   const orderId = typeof searchParams?.orderId === 'string' ? searchParams.orderId : undefined;
   const paymentId = typeof searchParams?.paymentId === 'string' ? searchParams.paymentId : undefined;
   const error = typeof searchParams?.error === 'string' ? searchParams.error : undefined;
-23| // (remove this line)
+
 
   const isSuccess = paymentId && !error;
   const isFailure = !!error;
