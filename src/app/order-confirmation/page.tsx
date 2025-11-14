@@ -20,7 +20,7 @@ export default function OrderConfirmationPage({
   const orderId = typeof searchParams?.orderId === 'string' ? searchParams.orderId : undefined;
   const paymentId = typeof searchParams?.paymentId === 'string' ? searchParams.paymentId : undefined;
   const error = typeof searchParams?.error === 'string' ? searchParams.error : undefined;
-}
+23| // (remove this line)
 
   const isSuccess = paymentId && !error;
   const isFailure = !!error;
@@ -79,7 +79,11 @@ export default function OrderConfirmationPage({
     );
   }
 
-  return (
+return (
+  <div className="flex flex-col min-h-screen">
+...
+111|   );
+112| }
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12 flex items-center justify-center">
