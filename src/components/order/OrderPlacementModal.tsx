@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { useToast } from '@/hooks/use-toast';
-import { DollarSign, Truck, ShoppingCart, User, MapPin, Loader2, Globe, Hash } from 'lucide-react';
+import { Truck, ShoppingCart, User, MapPin, Loader2, Globe, Hash } from 'lucide-react';
 import { useState, type Dispatch, type SetStateAction, useMemo } from 'react';
 import { placeOrderAction } from '@/app/actions';
 

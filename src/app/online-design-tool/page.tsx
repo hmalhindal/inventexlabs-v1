@@ -7,7 +7,6 @@ import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import {
   Upload,
@@ -64,16 +63,6 @@ export default function OnlineDesignToolPage() {
   const [selectedMaterial, setSelectedMaterial] = useState('Nickle');
   const [canvasWidth, setCanvasWidth] = useState(200);
   const [canvasHeight, setCanvasHeight] = useState(200);
-
-  const getSelectedMaterialPrice = () => {
-    for (const category of materialCategories) {
-      const material = category.items.find(item => item.name === selectedMaterial);
-      if (material) {
-        return material.price;
-      }
-    }
-    return 'N/A';
-  };
 
   return (
     <div className="flex flex-col min-h-screen bg-secondary/30 text-foreground">

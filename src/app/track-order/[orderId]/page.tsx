@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { FileText, AlertTriangle, Cog, Zap, Truck, CheckCircle, PackageSearch } from 'lucide-react';
+import { FileText, AlertTriangle, Cog, Truck, CheckCircle, PackageSearch } from 'lucide-react';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';

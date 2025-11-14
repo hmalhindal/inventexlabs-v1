@@ -45,13 +45,13 @@ export default function CncDesignGuidePage() {
             <p>CNC cutting tools are round, so internal corners will always have a radius. Design with the largest possible internal radii, as smaller radii require smaller tools and more machining time. A common rule of thumb is that the radius should be at least 1/3 of the cavity depth.</p>
 
             <h2>Hole Design</h2>
-            <p>Standard drill sizes are more economical. For deep holes (depth-to-diameter ratio > 6:1), consider potential difficulties in chip evacuation and tool breakage. Clearly specify if holes are threaded and provide thread specifications (e.g., M6x1.0).</p>
+            <p>Standard drill sizes are more economical. For deep holes (depth-to-diameter ratio &gt; 6:1), consider potential difficulties in chip evacuation and tool breakage. Clearly specify if holes are threaded and provide thread specifications (e.g., M6x1.0).</p>
             
             <h2>Feature Design</h2>
             <p>Avoid undercuts where possible, as they require special tooling or multi-axis machining, increasing cost. Simplify complex geometries if functionality is not compromised. Consider the accessibility of features for cutting tools.</p>
 
             <h2>Material Selection</h2>
-            <p>Choose materials based on the desired mechanical properties, cost, and machinability. Softer materials like aluminum are generally easier and faster to machine than harder materials like stainless steel or titanium. Refer to our <Link href="/materials/cnc-machining">CNC Materials page</Link> for options.</p>
+            <p>Choose materials based on the desired mechanical properties, cost, and machinability. Softer materials like aluminum are generally easier and faster to machine than harder materials like stainless steel or titanium. Refer to our CNC Materials page for options.</p>
             
             <h2>Text and Lettering</h2>
             <p>If text or logos are required, opt for engraved (recessed) features rather than raised ones, as they are easier to machine. Ensure font sizes and line thicknesses are large enough to be clearly machined.</p>

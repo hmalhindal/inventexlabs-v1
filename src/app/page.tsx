@@ -142,12 +142,13 @@ export default function HomePage() {
                     </div>
                     <div className="hidden md:block h-full">
                         <Image
-                            src="https://placehold.co/600x800.png"
+                            src="https://placehold.co/600x800/EEE/31343C?text=Product%20Showcase"
                             alt="Promotional image for online store"
                             width={600}
                             height={800}
                             className="object-cover w-full h-full"
                             data-ai-hint="product showcase"
+                            unoptimized
                         />
                     </div>
                 </div>

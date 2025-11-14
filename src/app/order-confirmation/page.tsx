@@ -6,12 +6,6 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
-type SearchParams = {
-  orderId?: string;
-  paymentId?: string;
-  error?: string;
-};
-
 export default function OrderConfirmationPage({
   searchParams,
 }: {
@@ -20,7 +14,6 @@ export default function OrderConfirmationPage({
   const orderId = typeof searchParams?.orderId === 'string' ? searchParams.orderId : undefined;
   const paymentId = typeof searchParams?.paymentId === 'string' ? searchParams.paymentId : undefined;
   const error = typeof searchParams?.error === 'string' ? searchParams.error : undefined;
-}
 
   const isSuccess = paymentId && !error;
   const isFailure = !!error;

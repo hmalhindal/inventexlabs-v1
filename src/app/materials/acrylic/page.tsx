@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Layers } from 'lucide-react';
@@ -45,7 +44,7 @@ export default function AcrylicMaterialPage() {
           </CardHeader>
           <CardContent className="space-y-6 text-lg">
             <p>
-              Acrylic, also known as Polymethyl Methacrylate (PMMA), is a transparent thermoplastic widely used as a lightweight and shatter-resistant alternative to glass. It's known for its excellent optical clarity, weather resistance, and ease of fabrication, making it a popular choice for a multitude of applications.
+              Acrylic, also known as Polymethyl Methacrylate (PMMA), is a transparent thermoplastic widely used as a lightweight and shatter-resistant alternative to glass. ItIt'sapos;s known for its excellent optical clarity, weather resistance, and ease of fabrication, making it a popular choice for a multitude of applications.
             </p>
 
             <h2 className="font-headline text-2xl text-primary pt-2">Available Acrylic Colors & Finishes</h2>

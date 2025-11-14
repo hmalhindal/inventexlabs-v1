@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -69,7 +69,7 @@ export default function MockupGeneratorPage() {
             }
             setIsLoading(false);
         };
-        reader.onerror = (error) => {
+        reader.onerror = () => {
              toast({
                 variant: 'destructive',
                 title: 'File Error',
@@ -78,8 +78,7 @@ export default function MockupGeneratorPage() {
             setIsLoading(false);
         }
 
-    } catch (error) {
-      console.error('Mockup generation error:', error);
+    } catch {
       toast({
         variant: 'destructive',
         title: 'An Error Occurred',
