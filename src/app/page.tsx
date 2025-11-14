@@ -63,6 +63,13 @@ const platformHighlights = [
 ];
 
 
+/**
+ * Renders the home page of the application.
+ * It features a hero section, platform highlights, a call-to-action for getting a quote,
+ * a section for the online store, and a display of additional services.
+ *
+ * @returns {JSX.Element} The rendered HomePage component.
+ */
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">

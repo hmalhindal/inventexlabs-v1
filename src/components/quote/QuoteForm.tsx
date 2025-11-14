@@ -39,6 +39,14 @@ interface QuoteFormProps {
   setIsLoading: (loading: boolean) => void;
 }
 
+/**
+ * A form for getting a manufacturing quote.
+ * It allows users to select a service type, upload a CAD file, choose a material, and specify a quantity.
+ * On submission, it calls the `getQuoteAction` server action and updates the parent component's state with the quotation data.
+ *
+ * @param {QuoteFormProps} props - The component props.
+ * @returns {JSX.Element} The rendered QuoteForm component.
+ */
 export function QuoteForm({ setQuotation, setIsLoading }: QuoteFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);

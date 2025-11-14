@@ -1,4 +1,12 @@
 // src/components/icons/InventexLogo.tsx
+/**
+ * Renders the Inventex logo as an SVG.
+ * @param {object} props - The component props.
+ * @param {string} [props.className] - The CSS class name for the SVG element.
+ * @param {number} [props.width=180] - The width of the SVG.
+ * @param {number} [props.height=48] - The height of the SVG.
+ * @returns {JSX.Element} The rendered InventexLogo component.
+ */
 export function InventexLogo({ className, width = 180, height = 48 }: { className?: string, width?: number, height?: number }) {
   return (
     <svg
