@@ -13,6 +13,15 @@ interface QuotationDisplayProps {
   onPlaceOrder: () => void;
 }
 
+/**
+ * A component that displays a single statistic with an icon, label, value, and optional unit.
+ * @param {object} props - The component props.
+ * @param {React.ElementType} props.icon - The icon component to display.
+ * @param {string} props.label - The label for the statistic.
+ * @param {string | number} props.value - The value of the statistic.
+ * @param {string} [props.unit] - The optional unit for the value.
+ * @returns {JSX.Element} The rendered StatItem component.
+ */
 const StatItem: React.FC<{ icon: React.ElementType; label: string; value: string | number; unit?: string }> = ({ icon: Icon, label, value, unit }) => (
   <div className="flex items-center justify-between py-3">
     <div className="flex items-center gap-3">
@@ -26,6 +35,14 @@ const StatItem: React.FC<{ icon: React.ElementType; label: string; value: string
 );
 
 
+/**
+ * A component that displays the quotation details.
+ * It shows a loading skeleton while the quotation is being fetched,
+ * a placeholder card if there is no quotation, and the detailed quotation otherwise.
+ *
+ * @param {QuotationDisplayProps} props - The component props.
+ * @returns {JSX.Element} The rendered QuotationDisplay component.
+ */
 export function QuotationDisplay({ quotation, isLoading, onPlaceOrder }: QuotationDisplayProps) {
   if (isLoading) {
     return (

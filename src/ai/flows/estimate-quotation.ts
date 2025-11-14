@@ -35,10 +35,25 @@ const EstimateQuotationOutputSchema = z.object({
 
 export type EstimateQuotationOutput = z.infer<typeof EstimateQuotationOutputSchema>;
 
+/**
+ * Estimates the quotation for a given manufacturing job.
+ * This function serves as a wrapper around the Genkit flow.
+ *
+ * @param {EstimateQuotationInput} input - The input for the quotation estimation.
+ * @returns {Promise<EstimateQuotationOutput>} A promise that resolves to the estimated quotation.
+ */
 export async function estimateQuotation(input: EstimateQuotationInput): Promise<EstimateQuotationOutput> {
   return estimateQuotationFlow(input);
 }
 
+/**
+ * A Genkit tool that analyzes a CAD file to determine its manufacturability and complexity.
+ * In a real implementation, this would call a CAD processing service. This is a mock implementation.
+ * @param {object} input - The input object.
+ * @param {string} input.cadDataUri - The CAD file as a data URI.
+ * @param {('laser cutting' | 'CNC machining')} input.serviceType - The manufacturing service type.
+ * @returns {Promise<object>} A promise that resolves to an object containing manufacturability status, complexity score, and estimated machine time.
+ */
 const cadInterpretationTool = ai.defineTool({
   name: 'cadInterpretation',
   description: 'Analyzes a CAD file to determine its manufacturability and complexity.',
@@ -66,6 +81,13 @@ const cadInterpretationTool = ai.defineTool({
   };
 });
 
+/**
+ * A Genkit tool that retrieves the cost per unit of a specified material.
+ * In a real implementation, this would query a material database. This is a mock implementation.
+ * @param {object} input - The input object.
+ * @param {string} input.material - The name of the material.
+ * @returns {Promise<number>} A promise that resolves to the cost per unit of the material.
+ */
 const materialCostTool = ai.defineTool({
   name: 'getMaterialCost',
   description: 'Retrieves the cost per unit of a specified material.',
