@@ -3,7 +3,7 @@
 import type { EstimateQuotationOutput } from '@/ai/flows/estimate-quotation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Form, FormControl, FormDescription as ShadcnFormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -155,7 +155,7 @@ export function QuoteForm({ setQuotation, setIsLoading }: QuoteFormProps) {
                        />
                     </div>
                   </FormControl>
-                  <ShadcnFormDescription>Supported formats: DXF, DWG, STEP, IGES. Max 10MB.</ShadcnFormDescription>
+                  <FormDescription>Supported formats: DXF, DWG, STEP, IGES. Max 10MB.</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -196,6 +196,7 @@ export function QuoteForm({ setQuotation, setIsLoading }: QuoteFormProps) {
                     <FormControl>
                       <Input type="number" placeholder="e.g., 10" {...field} min="1" />
                     </FormControl>
+                    <FormDescription>The number of parts to manufacture.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
