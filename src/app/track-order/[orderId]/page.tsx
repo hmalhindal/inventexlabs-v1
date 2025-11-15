@@ -17,6 +17,12 @@ const mockOrderStatuses = [
   { status: 'Delivered', icon: CheckCircle, date: null, completed: false },
 ];
 
+export async function generateStaticParams() {
+  const validOrderIds = ['12345', '67890', 'abcde'];
+  return validOrderIds.map((orderId) => ({
+    orderId,
+  }));
+}
 
 export default async function TrackOrderPage({ params }: { params: Promise<{ orderId: string }> }) {
   // In a real app, you'd fetch order data based on params.orderId
