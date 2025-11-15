@@ -8,6 +8,12 @@
 import { ai } from '@/ai/genkit';
 import { GenerateMockupInputSchema, GenerateMockupOutputSchema, type GenerateMockupInput, type GenerateMockupOutput } from './generate-mockup-schema';
 
+function sanitizePrompt(prompt: string): string {
+  // Remove characters that could be used for prompt injection.
+  // This is a basic example; a more robust solution would be needed for production.
+  return prompt.replace(/[<>{}]/g, '');
+}
+
 const mockupGeneratorFlow = ai.defineFlow(
   {
     name: 'mockupGeneratorFlow',
@@ -15,11 +21,13 @@ const mockupGeneratorFlow = ai.defineFlow(
     outputSchema: GenerateMockupOutputSchema,
   },
   async (input) => {
+    const sanitizedPrompt = sanitizePrompt(input.prompt);
+
     const { media } = await ai.generate({
       model: 'googleai/gemini-2.0-flash-preview-image-generation',
       prompt: [
         { media: { url: input.designDataUri } },
-        { text: `Create a realistic 3D mockup of the following scene: ${input.prompt}. Place the provided design naturally into the scene.` },
+        { text: `Create a realistic 3D mockup of the following scene: ${sanitizedPrompt}. Place the provided design naturally into the scene.` },
       ],
       config: {
         responseModalities: ['TEXT', 'IMAGE'],

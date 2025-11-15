@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Handshake, Building, Zap, Store } from 'lucide-react';
+import { Handshake, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {

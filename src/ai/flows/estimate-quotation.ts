@@ -70,10 +70,9 @@ const cadInterpretationTool = ai.defineTool({
     complexityScore: z.number().describe('A score indicating the complexity of the design (higher is more complex).'),
     estimatedMachineTime: z.number().describe('Estimated machine time in minutes.'),
   }),
-}, async (input) => {
+}, async () => {
   // In a real implementation, this would call a CAD processing service.
   // This is a mock implementation.
-  console.log("received cad data uri", input.cadDataUri);
   return {
     isManufacturable: true,
     complexityScore: Math.random() * 10,

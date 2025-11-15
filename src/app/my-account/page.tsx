@@ -2,10 +2,10 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
-import { User, Package, Settings, CreditCard, MapPin, Shield, LogOut, FileText } from 'lucide-react';
+import { Package, Settings, CreditCard, MapPin, Shield, LogOut, FileText } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 

@@ -6,22 +6,14 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
-type SearchParams = {
-  orderId?: string;
-  paymentId?: string;
-  error?: string;
-};
-
-export default async function OrderConfirmationPage({
+export default function OrderConfirmationPage({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const resolvedSearchParams = await searchParams;
-  const orderId = Array.isArray(resolvedSearchParams.orderId) ? resolvedSearchParams.orderId[0] : resolvedSearchParams.orderId;
-  const paymentId = Array.isArray(resolvedSearchParams.paymentId) ? resolvedSearchParams.paymentId[0] : resolvedSearchParams.paymentId;
-  const error = Array.isArray(resolvedSearchParams.error) ? resolvedSearchParams.error[0] : resolvedSearchParams.error;
-
+  const orderId = typeof searchParams?.orderId === 'string' ? searchParams.orderId : undefined;
+  const paymentId = typeof searchParams?.paymentId === 'string' ? searchParams.paymentId : undefined;
+  const error = typeof searchParams?.error === 'string' ? searchParams.error : undefined;
 
   const isSuccess = paymentId && !error;
   const isFailure = !!error;

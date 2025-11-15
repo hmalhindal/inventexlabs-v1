@@ -6,7 +6,6 @@ import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import {
   Upload,
@@ -35,7 +34,11 @@ const materialCategories = [
 
 // rest of file unchanged
 export default function OnlineDesignToolPage() {
-  // component implementation...
+  const [selectedTool, setSelectedTool] = useState('select');
+  const [selectedMaterial, setSelectedMaterial] = useState('Nickle');
+  const [canvasWidth, setCanvasWidth] = useState(200);
+  const [canvasHeight, setCanvasHeight] = useState(200);
+
   return (
     <>
       <Header />

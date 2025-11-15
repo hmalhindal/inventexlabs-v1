@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Printer, Star, Truck, Type, Flag, Megaphone, GalleryVertical, Layers, Presentation } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Digital Printing Services - Inventex Labs',

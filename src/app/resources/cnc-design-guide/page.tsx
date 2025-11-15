@@ -52,7 +52,7 @@ export default function CncDesignGuidePage() {
             <p>Avoid undercuts where possible, as they require special tooling or multi-axis machining, increasing cost. Simplify complex geometries if functionality is not compromised. Consider the accessibility of features for cutting tools.</p>
 
             <h2>Material Selection</h2>
-            <p>Choose materials based on the desired mechanical properties, cost, and machinability. Softer materials like aluminum are generally easier and faster to machine than harder materials like stainless steel or titanium. Refer to our <Link href="/materials/cnc-machining">CNC Materials page</Link> for options.</p>
+            <p>Choose materials based on the desired mechanical properties, cost, and machinability. Softer materials like aluminum are generally easier and faster to machine than harder materials like stainless steel or titanium. Refer to our CNC Materials page for options.</p>
             
             <h2>Text and Lettering</h2>
             <p>If text or logos are required, opt for engraved (recessed) features rather than raised ones, as they are easier to machine. Ensure font sizes and line thicknesses are large enough to be clearly machined.</p>

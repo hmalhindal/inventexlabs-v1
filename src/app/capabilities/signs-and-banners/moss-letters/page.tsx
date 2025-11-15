@@ -36,7 +36,7 @@ export default function MossLettersPage() {
               data-ai-hint="moss wall logo"
             />
             <p>
-              Embrace biophilic design with stunning moss letters and logos from Inventex Labs. We use preserved, 100% natural moss to create vibrant, green signage that requires no watering, sunlight, or maintenance. It's the perfect way to add a touch of nature and a unique textural element to any interior space.
+              Embrace biophilic design with stunning moss letters and logos from Inventex Labs. We use preserved, 100% natural moss to create vibrant, green signage that requires no watering, sunlight, or maintenance. ItIt'sapos;s the perfect way to add a touch of nature and a unique textural element to any interior space.
             </p>
             <p>
               Ideal for office receptions, retail stores, cafes, and homes, our moss signs are custom made in any font or shape. We can combine moss with other materials like wood or metal for a truly distinctive look.

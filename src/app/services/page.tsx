@@ -1,7 +1,7 @@
 
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import type { Metadata } from 'next';
 import { Scissors, Printer, Cog, Layers, Zap, Star, CheckCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
