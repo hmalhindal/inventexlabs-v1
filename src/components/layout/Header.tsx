@@ -7,6 +7,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { NavLinks } from './header/Navlinks';
 import { CtaButtons } from './header/CtaButtons';
 
+/**
+ * Renders the main header of the website.
+ * It includes the logo, main navigation, and call-to-action buttons.
+ * The navigation is responsive and uses tooltips for smaller screens.
+ * @returns {JSX.Element} The rendered Header component.
+ */
 export function Header() {
   return (
     <header className="bg-card border-b border-border shadow-sm sticky top-0 z-50">

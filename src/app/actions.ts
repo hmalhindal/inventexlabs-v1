@@ -9,6 +9,14 @@ interface GetQuoteActionInput {
   serviceType: ServiceTypeName;
 }
 
+/**
+ * Server action to get a quotation for a manufacturing job.
+ * It takes CAD data, material, quantity, and service type as input,
+ * and returns an estimated quotation or an error.
+ *
+ * @param {GetQuoteActionInput} input - The input for the quote estimation.
+ * @returns {Promise<{ data?: EstimateQuotationOutput; error?: string }>} A promise that resolves to an object containing the quotation data or an error message.
+ */
 export async function getQuoteAction(input: GetQuoteActionInput): Promise<{ data?: EstimateQuotationOutput; error?: string }> {
   try {
     // Validate input if necessary, though Zod in the flow does some validation.
@@ -20,7 +28,7 @@ export async function getQuoteAction(input: GetQuoteActionInput): Promise<{ data
       cadDataUri: input.cadDataUri,
       material: input.material,
       quantity: input.quantity,
-      serviceType: input.serviceType,
+      serviceType: input.serviceType.toLowerCase() as 'laser cutting' | 'CNC machining',
     };
     
     const result = await estimateQuotationFlow(aiInput);
@@ -45,6 +53,14 @@ interface PlaceOrderActionInput {
   };
 }
 
+/**
+ * Server action to place an order and initiate payment.
+ * It takes the quotation and shipping details, calculates the total cost,
+ * and uses the MyFatoorah payment gateway to create a payment link.
+ *
+ * @param {PlaceOrderActionInput} input - The input for placing the order.
+ * @returns {Promise<{ paymentUrl?: string; error?: string }>} A promise that resolves to an object containing the payment URL or an error message.
+ */
 export async function placeOrderAction(input: PlaceOrderActionInput): Promise<{ paymentUrl?: string; error?: string }> {
   const { quotation, shippingDetails } = input;
   const myFatoorahToken = process.env.MYFATOORAH_API_TOKEN;

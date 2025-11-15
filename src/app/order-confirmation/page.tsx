@@ -9,7 +9,7 @@ import { Footer } from '@/components/layout/Footer';
 export default function OrderConfirmationPage({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const orderId = typeof searchParams?.orderId === 'string' ? searchParams.orderId : undefined;
   const paymentId = typeof searchParams?.paymentId === 'string' ? searchParams.paymentId : undefined;
