@@ -18,9 +18,9 @@ const mockOrderStatuses = [
 ];
 
 
-export default function TrackOrderPage({ params: { orderId: orderIdFromParams } }: { params: { orderId: string } }) {
+export default async function TrackOrderPage({ params }: { params: Promise<{ orderId: string }> }) {
   // In a real app, you'd fetch order data based on params.orderId
-  const orderId = orderIdFromParams;
+  const { orderId } = await params;
   const validOrderIds = ['12345', '67890', 'abcde']; // Mock valid order IDs
   const orderExists = validOrderIds.includes(orderId); // Mock check
 

@@ -297,6 +297,7 @@ export function Header() {
                   </DropdownMenu>
                 )
               }
+              if (!link.href) return null;
               return (
                 <Tooltip key={link.label}>
                   <TooltipTrigger asChild>

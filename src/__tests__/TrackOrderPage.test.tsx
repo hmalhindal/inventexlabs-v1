@@ -20,16 +20,18 @@ jest.mock('@/components/layout/Footer', () => ({
 }));
 
 describe('TrackOrderPage', () => {
-  it('should render the order not found message for an invalid order ID', () => {
-    render(<TrackOrderPage params={{ orderId: 'invalid-order-id' }} />);
+  it('should render the order not found message for an invalid order ID', async () => {
+    const Page = await TrackOrderPage({ params: { orderId: 'invalid-order-id' } });
+    render(Page);
 
     expect(screen.getByText('Order Not Found')).toBeInTheDocument();
     expect(screen.getByText(/We couldn't find an order with the ID:/)).toBeInTheDocument();
     expect(screen.getByText('invalid-order-id')).toBeInTheDocument();
   });
 
-  it('should render the order status for a valid order ID', () => {
-    render(<TrackOrderPage params={{ orderId: '12345' }} />);
+  it('should render the order status for a valid order ID', async () => {
+    const Page = await TrackOrderPage({ params: { orderId: '12345' } });
+    render(Page);
 
     expect(screen.getByText('Track Your Order')).toBeInTheDocument();
     expect(screen.getByText(/Status for order:/)).toBeInTheDocument();
