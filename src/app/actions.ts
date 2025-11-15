@@ -28,7 +28,7 @@ export async function getQuoteAction(input: GetQuoteActionInput): Promise<{ data
       cadDataUri: input.cadDataUri,
       material: input.material,
       quantity: input.quantity,
-      serviceType: input.serviceType,
+      serviceType: input.serviceType.toLowerCase() as 'laser cutting' | 'CNC machining',
     };
     
     const result = await estimateQuotationFlow(aiInput);

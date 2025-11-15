@@ -12,14 +12,15 @@ type SearchParams = {
   error?: string;
 };
 
-export default function OrderConfirmationPage({
+export default async function OrderConfirmationPage({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const orderId = typeof searchParams?.orderId === 'string' ? searchParams.orderId : undefined;
-  const paymentId = typeof searchParams?.paymentId === 'string' ? searchParams.paymentId : undefined;
-  const error = typeof searchParams?.error === 'string' ? searchParams.error : undefined;
+  const resolvedSearchParams = await searchParams;
+  const orderId = Array.isArray(resolvedSearchParams.orderId) ? resolvedSearchParams.orderId[0] : resolvedSearchParams.orderId;
+  const paymentId = Array.isArray(resolvedSearchParams.paymentId) ? resolvedSearchParams.paymentId[0] : resolvedSearchParams.paymentId;
+  const error = Array.isArray(resolvedSearchParams.error) ? resolvedSearchParams.error[0] : resolvedSearchParams.error;
 
 
   const isSuccess = paymentId && !error;
@@ -79,11 +80,7 @@ export default function OrderConfirmationPage({
     );
   }
 
-return (
-  <div className="flex flex-col min-h-screen">
-...
-111|   );
-112| }
+  return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12 flex items-center justify-center">

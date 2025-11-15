@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview An AI flow for generating 3D mockups of designs.
@@ -27,7 +26,7 @@ const mockupGeneratorFlow = ai.defineFlow(
       },
     });
 
-    if (!media.url) {
+    if (!media || !media.url) {
       throw new Error('Image generation failed to return a data URI.');
     }
 
